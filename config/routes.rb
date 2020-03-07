@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index]
   end
   ##会員側
-  resources :customers, only: [:new, :show, :edit, :update, :destroy] do
+  resources :customers, only: [:show, :edit, :update, :destroy] do
     member do
       get 'withdraw'
     end
