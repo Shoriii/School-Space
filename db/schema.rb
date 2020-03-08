@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2020_03_07_042055) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "facility_id", null: false
     t.boolean "title", default: true, null: false
     t.integer "people", null: false
     t.integer "start_at", null: false
@@ -59,14 +61,15 @@ ActiveRecord::Schema.define(version: 2020_03_07_042055) do
   end
 
   create_table "facilities", force: :cascade do |t|
+    t.integer "category_id", null: false
     t.string "facility_name", null: false
     t.text "address", null: false
     t.string "facility_phone", null: false
     t.string "date", null: false
-    t.string "lending_time_start", null: false
-    t.string "lending_time_end", null: false
+    t.string "lending_time", null: false
     t.string "facility_image_id", null: false
     t.boolean "use_status", default: true, null: false
+    t.text "introduction", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
