@@ -1,0 +1,30 @@
+<div class ="container">
+  <div class= "row">
+    <div class= "col-xs-3">
+      <h2>新規登録画面</h2>
+    </div>
+  </div>
+    <%= form_for(@event, url:events_path) do |f| %>
+        <table class= "table">
+        <tbody>
+          <tr>
+            <td>タイトル</td>
+            <td><%= f.select :title,[["予約済",'予約済'],["キャンセル済",'キャンセル済']] %></td>
+          </tr>
+          <tr>
+            <td>ご利用開始時間</td>
+            <td><%= f.datetime_select :start_at, minute_step: 30 %></td>
+          </tr>
+          <tr>
+            <td>ご利用終了時間</td>
+            <td><%= f.datetime_select :end_at, minute_step: 30 %></td>
+          </tr>
+          <tr>
+            <td>ご利用人数</td>
+            <td><%= f.select :people,[["1人",'1人'],["2人",'2人'],["3人",'3人'],["4人",'5人'],["6人",'6人'],["7人以上",'7s人以上']],include_blank: "--選択してください--" %></td>
+          </tr>
+          </tbody>
+        </table>
+        <%= f.submit "新規登録" ,class:"btn btn-primary next"%>
+      <% end %>
+</div>

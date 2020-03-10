@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2020_03_07_042055) do
     t.integer "customer_id", null: false
     t.integer "facility_id", null: false
     t.boolean "title", default: true, null: false
-    t.integer "people", null: false
-    t.integer "start_at", null: false
-    t.integer "end_at", null: false
+    t.string "people", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
