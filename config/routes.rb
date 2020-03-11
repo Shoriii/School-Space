@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :categories, only: [:index,:create,:edit,:update]
     resources :events, only: [:index]
   end
+
   ##会員側
+  root to: 'homes#top'
   resources :customers, only: [:show, :edit, :update, :destroy] do
     member do
       get 'withdraw'
@@ -32,7 +34,6 @@ Rails.application.routes.draw do
   end
   resources :facilities, only: [:index,:show]
 
-  root to: 'homes#top'
   get 'homes/about' => 'homes#about'
 
 end
