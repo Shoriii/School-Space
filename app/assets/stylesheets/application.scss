@@ -16,3 +16,16 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ footer{
+	background-color:#F8F8F8;
+	height:60px;
+	position:fixed;
+	bottom:0;
+  width:100%;
+  border-top: solid 2px #E7E7E7;
+}
+footer p {
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+}
