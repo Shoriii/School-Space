@@ -26,9 +26,11 @@ Rails.application.routes.draw do
       get 'withdraw'
     end
   end
+  get 'events/:facility_id/new' ,to: 'events#new', as: 'new_event'
   resources :events do
     collection do
         get 'thanks'
+        get  'confirm'
         post 'confirm'
     end
   end

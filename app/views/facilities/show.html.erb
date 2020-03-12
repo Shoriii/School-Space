@@ -46,6 +46,6 @@
     </div>
     <div class="row">
     <div id="calendar"></div>
-    <%= link_to '新規予約する', new_event_path, class: 'btn-danger'%>
+    <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger'%>
     </div>
 </div>
