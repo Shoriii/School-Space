@@ -4,12 +4,12 @@
       <h2>新規登録画面</h2>
     </div>
   </div>
-    <%= form_for(@event, url:events_path) do |f| %>
+    <%= form_for(@event, url:confirm_events_path) do |f| %>
         <table class= "table">
         <tbody>
           <tr>
             <td>タイトル</td>
-            <td><%= f.select :title,[["予約済",'予約済'],["キャンセル済",'キャンセル済']] %></td>
+            <td><%= f.hidden_field :facility_id %><%= f.select :title,[["予約",'予約'],["キャンセル",'キャンセル']] %></td>
           </tr>
           <tr>
             <td>ご利用開始時間</td>
@@ -21,10 +21,10 @@
           </tr>
           <tr>
             <td>ご利用人数</td>
-            <td><%= f.select :people,[["1人",'1人'],["2人",'2人'],["3人",'3人'],["4人",'5人'],["6人",'6人'],["7人以上",'7s人以上']],include_blank: "--選択してください--" %></td>
+            <td><%= f.select :people,[["1人",'1人'],["2人",'2人'],["3人",'3人'],["4人",'5人'],["6人",'6人'],["7人以上",'7人以上']],include_blank: "--選択してください--" %></td>
           </tr>
           </tbody>
         </table>
-        <%= f.submit "新規登録" ,class:"btn btn-primary next"%>
+        <%= f.submit "予約確認画面へ" ,class:"btn btn-primary"%>
       <% end %>
 </div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <h2>予約確認画面</h2>
+      <div class="col-xs-6">
+      <table class="table">
+      <tr>
+      <td>タイトル</td>
+      <td><%= @event.title ? "予約" : "キャンセル" %>
+      </tr>
+      <tr>
+      <td>予約開始時間</td>
+      <td><%= @event.start_at %>
+      </tr>
+      <td>予約終了時間</td>
+      <td><%= @event.end_at %>
+      </tr>
+      <tr>
+      <td>予約施設</td>
+      <td><%= @event.facility.facility_name %></td>
+      </tr>
+      <tr>
+      <td>ご利用人数</td>
+      <td><%= @event.people %></td>
+      </tr>
+      </table>
+        <%= form_for(@event) do |f| %>
+        <%= f.hidden_field :title, value: @event.title  %>
+        <%= f.hidden_field :facility_id %>
+        <%= f.hidden_field :start_at, value: @event.start_at  %>
+        <%= f.hidden_field :end_at, value: @event.end_at  %>
+        <%= f.hidden_field :people, value: @event.people  %>
+        <%= f.submit '予約する' ,class:"btn btn-primary"%>
+        <% end %>
+      </div>
+  </div>
+</div>

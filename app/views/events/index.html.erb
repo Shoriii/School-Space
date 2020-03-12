@@ -1,1 +1,23 @@
-<div id="calendar"></div>
+<div class="container">
+	<h3>予約一覧画面</h3>
+	<table class="table">
+			<tr class="product-table">
+				<th>予約日</th>
+				<th>予約者</th>
+        <th>ご利用人数</th>
+				<th>ステータス</th>
+				<th>注文詳細</th>
+			</tr>
+		<tbody>
+			<% @events.each do |event| %>
+			<tr>
+				<td><%= link_to event.created_at, event_path(event.id) %></td>
+				<td><%= event.customer.last_name %></td>
+				<td><%= event.people %></td>
+				<td><%= event.title ? "予約済" : "キャンセル済" %></td>
+				<td><%= link_to '表示する', event_path(event.id), class:'btn btn-primary' %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

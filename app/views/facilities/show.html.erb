@@ -1,0 +1,51 @@
+<div class ="container">
+  <div class= "row">
+    <div class= "col-xs-3">
+      <h2>詳細画面</h2>
+    </div>
+  </div>
+    <div class= "row">
+      <div class= "col-xs-7">
+      <%= attachment_image_tag @facility,:facility_image,:fill,400,300,format:'jpeg' %>
+      </div>
+      <div class= "col-xs-5">
+        <table class= "table">
+        <tbody>
+          <tr>
+            <td>施設名</td>
+            <td><%=  @facility.facility_name %></td>
+          </tr>
+          <tr>
+            <td>カテゴリ</td>
+            <td><%= @facility.category.category_name %></td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td><%= @facility.address %></td>
+          </tr>
+          <tr>
+            <td>解放日</td>
+            <td><%= @facility.date%></td>
+          </tr>
+          <tr>
+            <td>解放時間</td>
+            <td><%= @facility.lending_time %></td>
+          </tr>
+          <tr>
+            <td>TEL</td>
+            <td><%= @facility.facility_phone %></td>
+          </tr>
+          <tr>
+            <td>紹介文</td>
+            <td><%= @facility.introduction %></td>
+          </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="row">
+    <div id="calendar"></div>
+    <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger'%>
+    </div>
+</div>
