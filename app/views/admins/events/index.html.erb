@@ -15,9 +15,7 @@
 				<td><%= event.customer.last_name %></td>
 				<td><%= event.people %></td>
 				<td><%= event.title %></td>
-				<% if event.title == "予約済" %>
-				<td><%= link_to '表示する', event_path(event.id), class:'btn btn-primary' %></td>
-				<% end %>
+				<td><%= link_to '表示する', admins_event_path(event.id), class:'btn btn-primary' %></td>
 			</tr>
 			<% end %>
 		</tbody>

@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @events = Event.all
   end
   def show
-
+    @event = Event.find(params[:id])
   end
   def create
     @event = Event.new(event_params)
@@ -22,7 +22,13 @@ class EventsController < ApplicationController
 
   end
   def update
-
+    @event = Event.find(params[:id])
+    @event.customer_id = current_customer.id
+    if @event.update(event_params)
+      redirect_to events_path
+    else
+      render 'show'
+    end
   end
   def destroy
 
