@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_042055) do
   create_table "events", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "facility_id", null: false
-    t.boolean "title", default: true, null: false
+    t.integer "title", default: 0, null: false
     t.string "people", null: false
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
