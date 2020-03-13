@@ -12,7 +12,7 @@
 			<% @events.each do |event| %>
 			<tr>
 				<td><%= link_to event.created_at, event_path(event.id) %></td>
-				<td><%= event.customer.last_name %></td>
+				<td><%= event.customer.last_name %><%= event.customer.first_name %></td>
 				<td><%= event.people %></td>
 				<td><%= event.title %></td>
 				<td><%= link_to '表示する', admins_event_path(event.id), class:'btn btn-primary' %></td>

@@ -43,9 +43,22 @@
 
         </table>
       </div>
+        <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger'%>
     </div>
-    <div class="row">
-     <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger'%>
     <div id="calendar"></div>
     </div>
 </div>
+<script>
+$('#calendar').fullCalendar({
+  events: [
+    <% @events.each do |event| %>
+    {
+
+      title:'<%= event.title %>',
+      start:'<%= event.start_at %>',
+      end: '<%= event.end_at %>'
+    },
+    <% end %>
+  ]
+});
+</script>
