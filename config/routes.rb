@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   ##会員側
   root to: 'homes#top'
-  resources :customers, only: [:show, :edit, :update, :destroy] do
+  resource :customer, only: [:show, :edit, :update, :destroy] do
     member do
       get 'withdraw'
     end

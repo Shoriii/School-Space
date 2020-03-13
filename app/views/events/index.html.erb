@@ -11,8 +11,8 @@
 		<tbody>
 			<% @events.each do |event| %>
 			<tr>
-				<td><%= link_to event.created_at, event_path(event.id) %></td>
-				<td><%= event.customer.last_name %></td>
+				<td><%= link_to l event.created_at, format: :short %></td>
+				<td><%= event.customer.last_name %><%= event.customer.first_name %></td>
 				<td><%= event.people %></td>
 				<td><%= event.title %></td>
 				<% if event.title == "予約済" %>

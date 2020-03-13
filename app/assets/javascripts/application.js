@@ -15,13 +15,14 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
 //= require moment
+//= require moment/ja.js
 //= require fullcalendar
-//= require fullcalendar/locale-all
+//= require fullcalendar/lang/ja
+//= require_tree .
 
 $(function () {
-    // 画面遷移を検知
+    // 画面遷移
     $(document).on('turbolinks:load', function () {
         if ($('#calendar').length) {
 
@@ -38,14 +39,14 @@ $(function () {
             });
             $(document).on('turbolinks:before-cache', clearCalendar);
 
-            //events: '/events.json', 以下に追加
+            //events: '/events.json'追加
             $('#calendar').fullCalendar({
                 events: '/events.json',
-                //カレンダー上部を年月で表示させる
+                //カレンダー上部を年月で表示
                 titleFormat: 'YYYY年 M月',
-                //曜日を日本語表示
+                //曜日
                 dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
-                //ボタンのレイアウト
+                //ボタン
                 header: {
                     left: '',
                     center: 'title',
@@ -65,15 +66,15 @@ $(function () {
                 },
                 // Drag & Drop & Resize
                 editable: true,
-                //イベントの時間表示を２４時間に
-                timeFormat: "HH:mm",
-                //イベントの色を変える
+                // 時間の書式
+                timeFormat: 'H(:mm)',
+                //イベントの色
                 eventColor: '#87cefa',
-                //イベントの文字色を変える
+                //イベントの文字色
                 eventTextColor: '#000000',
                 eventRender: function(event, element) {
-                    element.css("font-size", "0.8em");
-                    element.css("padding", "5px");
+                    element.scss("font-size", "0.8em");
+                    element.scss("padding", "5px");
                 }
             });
         }

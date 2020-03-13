@@ -24,7 +24,7 @@
                   <li><%= link_to "ホーム", root_path %></li>
                   <li><%= link_to "アバウト", homes_about_path %></li>
                   <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "マイページ" %></li>
+                  <li><%= link_to "マイページ", customer_path %></li>
                   <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
                 </ul>
                   <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-warning' %>
