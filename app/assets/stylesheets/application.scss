@@ -33,6 +33,12 @@
 	width: 950px;
 	margin: 0 auto;
 }
+
+h2 {
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7db4e6;/*左線*/
+}
  footer{
 	background-color:#F8F8F8;
 	height:60px;
