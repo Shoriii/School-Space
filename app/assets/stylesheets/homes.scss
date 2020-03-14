@@ -1,3 +1,142 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//メインビジュアル
+#mv {
+	height: 650px;
+	width: 100%;
+	text-align: center;
+	background-image: url("TSU89_goal_TP_V.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.mv-title {
+	padding-top: 200px;
+	padding-bottom: 10px;
+	font-size: 64px;
+	color: #FAFAFA;
+}
+.mv-subtitle {
+	font-size: 40px;
+	color: #FAFAFA;
+}
+.mv-text {
+	font-size: 20px;
+  color: #FAFAFA;
+}
+.btn-success {
+  background: #EC715F
+}
+//カテゴリ
+#category {
+	background-color: #ECEFF1;
+	text-align: center;
+  width: 100%;
+}
+.category {
+	display: inline-block;
+	position: relative;
+	float:left;
+}
+.heading {
+	font-size: 32px;
+	color: #000000;
+	margin: 40px 0;
+	text-align: center;
+
+}
+
+.heading::after {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100px;
+	background-color: #EC715F;
+	margin: 8px auto 0 auto;
+
+}
+
+.box-title {
+  margin: 30px auto;
+	font-size: 25px;
+	color: #ECEFF1;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.25);
+	width: 200px;
+}
+.box1 {
+	height: 250px;
+	width: 300px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background-image: url(basketball.jpg);
+	background-size: cover;
+	background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box2 {
+	height: 250px;
+	width: 300px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background-image: url(tennis.jpeg);
+	background-size: cover;
+  background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box3 {
+	height: 250px;
+	width: 300px;
+	margin-bottom: 10px;
+	background-image: url(tabletennis.jpeg);
+	background-size: cover;
+  background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box4 {
+	height: 250px;
+	width: 300px;
+	margin-right: 10px;
+	margin-bottom: 90px;
+	background-image: url(swim.jpeg);
+	background-size: cover;
+  background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box5 {
+	height: 250px;
+	width: 300px;
+	margin-right: 10px;
+	margin-bottom: 90px;
+	background-image: url(volleyball.jpeg);
+	background-size: cover;
+  background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box6 {
+	height: 250px;
+	width: 300px;
+	margin-bottom: 90px;
+	background-image: url(badminton.jpeg);
+	background-size: cover;
+  background-position: center;
+	box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+}
+
+.box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover {
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1875em);
+}

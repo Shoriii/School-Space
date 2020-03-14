@@ -1,1 +1,52 @@
-<h2>トップページ</h2>
+  <!-- メインビジュアル -->
+  <section id="mv">
+    <div class="container">
+      <h1 class="mv-title">School-Space</h1>
+      <h4 class="mv-subtitle">スクスペ</h4>
+      <p class="mv-text">誰でも、気軽に、簡単に、施設を予約できます。</p>
+      <div class="btn-wrapper">
+        <% if customer_signed_in? %>
+          <div class="btn-top">
+            <p><%=link_to "施設を予約する", facilities_path, class: "btn btn-danger center-block", style:"width:50%;" %></p>
+          </div>
+          <% else %>
+          <div class="btn-top">
+            <p><%=link_to "ログイン", new_customer_session_path, class: "btn btn-info center-block", style:"width:50%;" %></p>
+            <p><%=link_to "新規会員登録", new_customer_registration_path, class: "btn btn-warning center-block", style:"width:50%;" %></p>
+          </div>
+        <% end %>
+        </div>
+      </div>
+  </section>
+  <!-- カテゴリ -->
+  <section id="category">
+    <div class="container">
+      <h2 class="heading">カテゴリ</h2>
+      <div class="category-box clearfix">
+        <div class="category box1"><a href="/facilities?category_name=バスケットボール">
+        <p class="box-title">バスケットボール</p>
+        </a>
+        </div>
+        <div class="category box2"><a href="/facilities?category_name=テニス">
+        <p class="box-title">テニス</p>
+        </a>
+        </div>
+        <div class="category box3"><a href="/facilities?category_name=卓球">
+        <p class="box-title">卓球</p>
+        </a>
+        </div>
+        <div class="category box4"><a href="/facilities?category_name=水泳">
+        <p class="box-title">水泳</p>
+        </a>
+        </div>
+        <div class="category box5"><a href="/facilities?category_name=バレーボール">
+        <p class="box-title">バレーボール</p>
+        </a>
+        </div>
+        <div class="category box6"><a href="/facilities?category_name=バドミントン">
+        <p class="box-title">バドミントン</p>
+        </a>
+        </div>
+      </div>
+    </div>	
+  </section>

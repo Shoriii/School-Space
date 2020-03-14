@@ -4,7 +4,7 @@
     <title>SchoolSpace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -27,8 +27,18 @@
                   <li><%= link_to "マイページ", customer_path %></li>
                   <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
                 </ul>
-                  <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-warning' %>
+                  <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
                   </p>
+            </div>
+            <% elsif admin_signed_in? %>
+            <div class="collapse navbar-collapse" id="navbarEexample8">
+                <ul class="nav navbar-nav">
+                  <li><%= link_to "ホーム", facilities_path %></li>
+                  <li><%= link_to "施設一覧", admins_facilities_path %></li>
+                  <li><%= link_to "会員一覧", admins_customers_path %></li>
+                  <li><%= link_to "予約一覧", admins_events_path %></li>
+                  <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></li>
+                </ul>
             </div>
             <% else %>
             <div class="collapse navbar-collapse" id="navbarEexample8">
@@ -36,22 +46,9 @@
                   <li><%= link_to "ホーム", root_path %></li>
                   <li><%= link_to "アバウト", homes_about_path %></li>
                   <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "ログイン", new_customer_session_path %></li>
-                  <li><%= link_to "サインアップ", new_customer_registration_path %></li>
                 </ul>
-                   <p class="navbar-text navbar-right">ようこそ ゲスト さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-warning' %>
+                   <p class="navbar-text navbar-right">ようこそ ゲスト さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
                   </p>
-            </div>
-            <% end %>
-            <% if admin_signed_in? %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", facilities_path %></li>
-                  <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "会員一覧", admins_cusomers_path %></li>
-                  <li><%= link_to "予約一覧", admins_events_path %></li>
-                  <li><%= link_to "ログアウト", destroy_admins_session_path, method: :delete %></li></li>
-                </ul>
             </div>
             <% end %>
         </div>
