@@ -34,11 +34,22 @@
 	margin: 0 auto;
 }
 
+//見出し
 h2 {
   padding: 0.25em 0.5em;/*上下 左右の余白*/
   background: transparent;/*背景透明に*/
   border-left: solid 5px #7db4e6;/*左線*/
 }
+
+//施設
+.table-title {
+  border-left: solid 3px orange;
+  border-right: solid 1px #DDDDDD;
+}
+.table-box {
+  border: solid 1px #DDDDDD;
+}
+//フッター
  footer{
 	background-color:#F8F8F8;
 	height:60px;

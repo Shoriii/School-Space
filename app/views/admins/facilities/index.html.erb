@@ -1,25 +1,29 @@
 <div class="container">
   <div class= "row">
+  <div class= "row">
   <h2>施設一覧</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>施設ID</th>
-          <th>施設</th>
-          <th>カテゴリ</th>
-          <th>ステータス</th>
-        </tr>
-      </thead>
-    <tbody>
-      <% @facilities.each do |facility| %>
-      <tr>
-        <td><%= facility.id %></td>
-        <td><%= link_to facility.facility_name,admins_facility_path(facility.id) %></td>
-        <td><%= facility.category.category_name %></td>
-        <td><%= facility.use_status ? "使用可" : "使用不可" %></td>
-        <% end %>
-      </tr>
-    </tbody>
-      </table>
   </div>
+  <div class= "row">
+  <%= link_to '新規登録', new_admins_facility_path, class:'btn btn-primary', style:'float:right;'%>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>施設ID</th>
+            <th>施設</th>
+            <th>カテゴリ</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @facilities.each do |facility| %>
+        <tr>
+          <td><%= facility.id %></td>
+          <td><%= link_to facility.facility_name,admins_facility_path(facility.id) %></td>
+          <td><%= facility.category.category_name %></td>
+          <td><%= facility.use_status ? "使用可" : "使用不可" %></td>
+          <% end %>
+        </tr>
+      </tbody>
+        </table>
+    </div>
 </div>

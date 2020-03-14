@@ -17,5 +17,7 @@ module SchoolSpace
     # the framework and any gems in your application.
     # デフォルトのロケールを日本（ja）に設定
     config.i18n.default_locale = :ja
+    #日本時間に設定
+    config.time_zone = 'Tokyo'
   end
 end

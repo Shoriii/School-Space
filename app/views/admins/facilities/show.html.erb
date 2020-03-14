@@ -6,47 +6,47 @@
   </div>
     <div class= "row">
       <div class= "col-xs-7">
-      <%= attachment_image_tag @facility,:facility_image,:fill,600,400,format:'jpeg' %>
+      <%= attachment_image_tag @facility,:facility_image,:fill,400,300,format:'jpeg' %>
       </div>
       <div class= "col-xs-5">
         <table class= "table">
         <tbody>
-          <tr>
-            <td>施設名</td>
+          <tr class="table-box">
+            <td class="table-title">施設名</td>
             <td><%=  @facility.facility_name %></td>
           </tr>
-          <tr>
-            <td>カテゴリ</td>
+          <tr class="table-box">
+            <td class="table-title">カテゴリ</td>
             <td><%= @facility.category.category_name %></td>
           </tr>
-          <tr>
-            <td>住所</td>
+          <tr class="table-box">
+            <td class="table-title">住所</td>
             <td><%= @facility.address %></td>
           </tr>
-          <tr>
-            <td>解放日</td>
+          <tr class="table-box">
+            <td class="table-title">解放日</td>
             <td><%= @facility.date%></td>
           </tr>
-          <tr>
-            <td>解放時間</td>
+          <tr class="table-box">
+            <td class="table-title">解放時間</td>
             <td><%= @facility.lending_time %></td>
           </tr>
-          <tr>
-            <td>TEL</td>
+          <tr class="table-box">
+            <td class="table-title">TEL</td>
             <td><%= @facility.facility_phone %></td>
           </tr>
-          <tr>
-            <td>紹介文</td>
+          <tr class="table-box">
+            <td class="table-title">紹介文</td>
             <td><%= @facility.introduction %></td>
           </tr>
-          <tr>
-            <td>使用ステータス</td>
+          <tr class="table-box">
+            <td class="table-title">使用ステータス</td>
             <td><%= @facility.use_status ? "使用可": "使用不可" %></td>
           </tr>
           </tbody>
 
         </table>
-        <%= link_to '編集', edit_admins_facility_path(@facility.id) ,class:"btn btn-primary next"%>
+        <%= link_to '編集する', edit_admins_facility_path(@facility.id) ,class:"btn btn-primary", style:"width:50%;"%>
       </div>
     </div>
 </div>
