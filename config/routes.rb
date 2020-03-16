@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index,:show,:edit,:update]
     resources :facilities, except: [:destroy]
     resources :categories, only: [:index,:create,:edit,:update]
-    resources :events, only: [:index, :show]
+    resources :events, only: [:index, :show, :edit, :update]
   end
 
   ##会員側

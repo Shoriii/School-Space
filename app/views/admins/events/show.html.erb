@@ -55,5 +55,10 @@
           </tr>
         </table>
     </div>
+    <label>予約状況</label>
+        <%= form_for(@event) do |f| %>
+        <%= f.select :title,[["予約済",'予約済'],["キャンセル",'キャンセル済']] %>
+        <%= f.submit "キャンセルする" ,"data-confirm" => "本当にキャンセルしますか？",class:"btn btn-danger"%>
+        <% end %>
   </div>
 </div>
