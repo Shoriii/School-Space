@@ -2,6 +2,7 @@ class FacilitiesController < ApplicationController
   def index
     @catefories = Category.all
     @facilities = Facility.all
+    @facilities = Facility.page(params[:page]).reverse_order
   	 if into = params[:category_name]
   	 @facilities = Category.find_by(category_name: params[:category_name]).facilities
     else

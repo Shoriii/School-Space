@@ -33,7 +33,7 @@
 
  .container {
 	width: 950px;
-	margin: 0 auto;
+	margin-bottom: 60px;
 }
 
 //見出し
@@ -70,7 +70,7 @@ h3 {
 }
 //フッター
  footer{
-	background-color:#F8F8F8;
+	background-color:#FFFFFF;
 	height:60px;
 	position:fixed;
 	bottom:0;
@@ -85,4 +85,18 @@ footer p {
 //ボタン
 .btn-primary {
   background-color: #4da6ff;
+}
+
+//ページネーション
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+.pagination>li>a:hover {
+  border-radius: 15px;
 }

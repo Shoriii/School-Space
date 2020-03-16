@@ -4,6 +4,7 @@ class Admins::FacilitiesController < ApplicationController
   end
   def index
     @facilities = Facility.all
+    @facilities = Facility.page(params[:page]).reverse_order
   end
   def create
     @facility = Facility.new(facility_params)
