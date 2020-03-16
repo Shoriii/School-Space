@@ -1,4 +1,8 @@
 class Admins::FacilitiesController < ApplicationController
+  def top
+    @facilities = Facility.all.order("created_at DESC").limit(4)
+    @events= Event.all.order("created_at DESC").limit(4)
+  end
   def new
     @facility = Facility.new
   end

@@ -14,7 +14,11 @@ Rails.application.routes.draw do
  ##管理者側
   namespace :admins do
     resources :customers, only: [:index,:show,:edit,:update]
-    resources :facilities, except: [:destroy]
+    resources :facilities, except: [:destroy] do
+      collection do
+        get 'top'
+      end
+    end
     resources :categories, only: [:index,:create,:edit,:update]
     resources :events, only: [:index, :show, :edit, :update]
   end

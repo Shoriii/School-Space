@@ -34,7 +34,7 @@
             <% elsif admin_signed_in? %>
             <div class="collapse navbar-collapse" id="navbarEexample8">
                 <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", facilities_path %></li>
+                  <li><%= link_to "ホーム", top_admins_facilities_path %></li>
                   <li><%= link_to "施設一覧", admins_facilities_path %></li>
                   <li><%= link_to "会員一覧", admins_customers_path %></li>
                   <li><%= link_to "予約一覧", admins_events_path %></li>
