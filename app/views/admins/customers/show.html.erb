@@ -1,34 +1,36 @@
 <div class="container">
     <div class="row">
-      <div class="col-xs-5">
-        <h3>マイページ</h3>
-        <label>登録情報</label>
-          <%= link_to "編集する", edit_customer_path, class:"btn btn-default" %>
-
-            <table class="table">
-              <tr>
-               <td>会員ステータス</td>
-               <td><%= @customer.member_status ? "会員" : "退会"%></td>
-              </tr>
-              <tr>
-               <td>氏名</td>
-               <td><%= @customer.last_name %> <%= @customer.first_name %></td>
-              </tr>
-              <tr>
-            	 <td>カナ</td>
-               <td><%= @customer.kana_last_name %><%= @customer.kana_first_name %></td>
-              </tr>
-              <tr>
-            	 <td>電話番号</td>
-               <td><%= @customer.telephone %></td>
-              </tr>
-              <tr>
-            	 <td>メールアドレス</td>
-               <td><%= @customer.email %></td>
-              </tr>
-            </table>
-            <label>予約一覧</label>
-            <%= link_to "一覧を見る", admins_events_path, class:"btn btn-default next" %>
+      <div class="col-xs-12">
+        <h2>会員詳細画面</h2>
+        <h3>登録情報</h3>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+          <div class="profile">
+            <h4 class="profile-title">個人設定</h4>
+            <div class="profile-box">
+              <i class="fas fa-user-cog"></i>
+            </div>
+            <div class="profile-box">
+              <li class="profile-text"><%= link_to ">編集する", edit_admins_customer_path %></li>
+              <li class="profile-text"><%= link_to ">パスワード変更", admins_customer_path %></li>
+              <li class="profile-text"><%= link_to ">退会手続きへ", edit_admins_customer_path %></li>
+            </div>
+          </div>
+          </div>
+          <div class="col-xs-6">
+          <div class="profile">
+            <h4 class="profile-title">各種</h4>
+            <div class="profile-box">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="profile-box">
+              <li class="profile-text"><%= link_to ">予約一覧へ", admins_events_path %></li>
+              <li class="profile-text"><%= link_to ">会員一覧へ", admins_customers_path %></li>
+              <li class="profile-text"><%= link_to ">施設一覧へ", admins_facilities_path %></li>
+            </div>
+          </div>
+        </div>
     </div>
 </div>

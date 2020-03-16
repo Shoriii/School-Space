@@ -1,31 +1,36 @@
 <div class="container">
     <div class="row">
-      <div class="col-xs-5">
-        <h3>マイページ</h3>
-        <label>登録情報</label>
-          <%= link_to "編集する", edit_customer_path, class:"btn btn-default" %>
-          <%= link_to "パスワードを変更する", customer_path, class:"btn btn-default" %>
-
-            <table class="table">
-              <tr>
-               <td>氏名</td>
-               <td><%= current_customer.last_name %> <%= current_customer.first_name %></td>
-              </tr>
-              <tr>
-            	 <td>カナ</td>
-               <td><%= current_customer.kana_last_name %><%= current_customer.kana_first_name %></td>
-              </tr>
-              <tr>
-            	 <td>電話番号</td>
-               <td><%= current_customer.telephone %></td>
-              </tr>
-              <tr>
-            	 <td>メールアドレス</td>
-               <td><%= current_customer.email %></td>
-              </tr>
-            </table>
-            <label>予約一覧</label>
-            <%= link_to "一覧を見る", events_path, class:"btn btn-default next" %>
+      <div class="col-xs-12">
+        <h2>マイページ</h2>
+        <h3>登録情報</h3>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+          <div class="profile">
+            <h4 class="profile-title">個人設定</h4>
+            <div class="profile-box">
+              <i class="fas fa-user-cog"></i>
+            </div>
+            <div class="profile-box">
+              <li class="profile-text"><%= link_to ">編集する", edit_customer_path %></li>
+              <li class="profile-text"><%= link_to ">パスワード変更", customer_path %></li>
+              <li class="profile-text"><%= link_to ">退会手続きへ", edit_customer_path %></li>
+            </div>
+          </div>
+          </div>
+          <div class="col-xs-6">
+          <div class="profile">
+            <h4 class="profile-title">予約各種</h4>
+            <div class="profile-box">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+            <div class="profile-box">
+              <li class="profile-text"><%= link_to ">予約一覧へ", events_path %></li>
+              <li class="profile-text"><%= link_to ">新規予約する", facilities_path %></li>
+              <li class="profile-text"><%= link_to ">施設をみる", facilities_path %></li>
+            </div>
+          </div>
+        </div>
     </div>
 </div>

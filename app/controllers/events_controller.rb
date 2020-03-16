@@ -11,18 +11,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.customer_id = current_customer.id
-
-    #respond_to do |format|
-      if @event.save
-        #format.html { redirect_to thanks_events_path }
-        #format.json { render :show, status: :created, location: @event }
-        redirect_to thanks_events_path
-      else
-        #format.html { render :new }
-        #format.json { render json: @event.errors, status: :unprocessable_entity }
-        render 'new'
-      end
-   #end
+    if @event.save
+      redirect_to thanks_events_path
+    else
+      render 'new'
+    end
   end
   def edit
 
@@ -31,7 +24,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.customer_id = current_customer.id
     if @event.update(event_params)
-      redirect_to events_path
+       redirect_to events_path
     else
       render 'show'
     end

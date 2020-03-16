@@ -5,7 +5,7 @@
        <% @facilities.each do |facility| %>
           <div class="facility-area">
 							<%= link_to(facility_path(facility), class: 'list-content') do %>
-                <%= attachment_image_tag facility,:facility_image,:fill,350,200,format:'jpeg' %>
+                <%= attachment_image_tag facility,:facility_image,:fill,280,200,format:'jpeg' %>
                 <p>
                   <ul class="facility-heading">施設名</ul><li> <%= facility.facility_name %></li><br>
                   <ul class="facility-heading">解放日</ul><li> <%= facility.date%></li><br>

@@ -1,8 +1,12 @@
 <div class="container">
+  <div class="row">
+  <div class="col-xs-12">
   <h2>予約詳細画面</h2>
+  </div>
+  </div>
     <div class="row">
       <div class="col-xs-6">
-        <h3>予約者情報</h3>
+        <div class="event-heading">予約者情報</div>
           <table class="table">
             <tr>
               <td>予約者氏名（姓）</td>
@@ -16,14 +20,18 @@
               <td>予約者氏名カナ（セイ）</td>
               <td><%= @event.customer.kana_last_name %></td>
             </tr>
-             <tr>
+            <tr>
               <td>予約者氏名カナ（メイ）</td>
               <td><%= @event.customer.kana_first_name %></td>
+            </tr>
+            <tr>
+              <td>電話番号</td>
+              <td><%= @event.customer.telephone %></td>
             </tr>
           </table>
       </div>
       <div class="col-xs-6">
-        <h3>予約内容</h3>
+        <div class="event-heading">予約内容</div>
           <table class="table">
             <tr>
               <td>予約状況</td>
@@ -35,11 +43,11 @@
             </tr>
             <tr>
               <td>予約開始時間</td>
-              <td><%= @event.start_at %></td>
+              <td><%= @event.start_at.strftime("%Y-%m-%d %H:%M") %></td>
             </tr>
             <tr>
               <td>予約終了時間</td>
-              <td><%= @event.end_at %></td>
+              <td><%= @event.end_at.strftime("%Y-%m-%d %H:%M") %></td>
             </tr>
             <tr>
               <td>ご利用人数</td>
@@ -49,7 +57,6 @@
       </div>
         <label>予約状況</label>
         <%= form_for(@event) do |f| %>
-        <%#= f.hidden_field :facility_id %>
         <%= f.select :title,[["予約済",'予約済'],["キャンセル",'キャンセル済']] %>
         <%= f.submit "キャンセルする" ,"data-confirm" => "本当にキャンセルしますか？",class:"btn btn-danger"%>
         <% end %>

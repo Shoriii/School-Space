@@ -6,9 +6,20 @@ class Admins::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
   def edit
-
+    @customer = Customer.find(params[:id])
+    #@customer = current_customer
   end
   def update
-
+    customer = Customer.find(params[:id])
+    #@customer = current_customer
+    if  customer.update(customer_params)
+       redirect_to admins_customer_path
+    else
+   	   render action: :edit
+    end
+  end
+    private
+  def customer_params
+    params.require(:customer).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :telephone, :email, :member_status)
   end
 end

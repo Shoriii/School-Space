@@ -5,13 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d33356096.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body data-turbolinks="false">
    <header>
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-light navbar-fixed-top", style="background-color:#ffffff;box-shadow: 1px 1px 1px gray;">
         <div class="container-fluid">
           <div class="navbar-header">
               <a class="navbar-brand" href="#">
@@ -39,6 +40,7 @@
                   <li><%= link_to "予約一覧", admins_events_path %></li>
                   <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></li>
                 </ul>
+                <p class="navbar-text navbar-right">管理者ログイン中</p>
             </div>
             <% else %>
             <div class="collapse navbar-collapse" id="navbarEexample8">
