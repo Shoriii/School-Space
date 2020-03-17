@@ -1,5 +1,7 @@
 <div class="row">
       <div class="col-xs-12">
+      <h2>カレンダー</h2>
+      <p class="note">※「予約済」の場合は<span class="under-bule">青色</span>、「キャンセル済」の場合は<span class="under-red">赤色</span>で表示されます。</p>
       <div id="calendar"></div>
       </div>
     </div>
@@ -10,7 +12,7 @@ $('#calendar').fullCalendar({
     <% @events.each do |event| %>
     {
 
-      title:'<%= event.title %> <%= event.people %>',
+      title:'<% event.title %><%= event.customer.last_name %>',
       start:'<%= event.start_at.strftime("%Y-%m-%d %H:%M") %>',
       end: '<%= event.end_at.strftime("%Y-%m-%d %H:%M") %>'
     },
@@ -41,7 +43,10 @@ $('#calendar').fullCalendar({
   // Drag & Drop & Resize
   editable: true,
   // 時間の書式
-  timeFormat: 'HH:mm',
+  defaultView: 'month',
+  displayEventTime: true,
+  displayEventEnd: true,
+  timeFormat: "HH:mm",
   //イベントの文字色
   eventTextColor: '#ffffff',
 });

@@ -110,3 +110,48 @@ footer p {
 .pagination>li>a:hover {
   border-radius: 15px;
 }
+
+//カレンダー
+.fc-left > h2 {
+  color: black;
+  font-size: 24px;
+  border-left: solid 4px orange;/*左側の線*/
+  background: none;/*背景色*/
+  border-bottom: none;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1;
+  padding: 0.5em;
+}
+$title:"予約済";
+$title:"キャンセル済";
+.fc-event-container> a {
+  @if $title =="予約済" {
+    background-color:#4169e1;
+  }
+  @else if $title == "キャンセル済" {
+  background-color:#dc143c;
+}
+}
+.note {
+  font-size: 18px;
+}
+.under-bule {
+  color: blue;
+  text-decoration : underline;
+}
+
+.under-red {
+  color: red;
+  text-decoration : underline;
+}
+.fc-view {
+  background-color: #FFFFFF;
+}
+.fc-sun {
+  color:#333333;
+  background-color:rgba(255,0,0,0.1);
+}
+.fc-sat {
+  color:#333333;
+  background-color:rgba(0,0,255,0.1);
+}
