@@ -11,51 +11,8 @@
   </head>
 
   <body data-turbolinks="false">
-   <header>
-      <nav class="navbar navbar-light navbar-fixed-top", style="background-color:#ffffff;box-shadow: 1px 1px 1px gray;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                School-Space
-              </a>
-            </div>
-              <% if customer_signed_in? && request.fullpath.index("/admins/") == nil %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", root_path %></li>
-                  <li><%= link_to "アバウト", homes_about_path %></li>
-                  <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "マイページ", customer_path %></li>
-                  <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-                </ul>
-                  <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
-                  </p>
-            </div>
-            <% elsif admin_signed_in? %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", top_admins_facilities_path %></li>
-                  <li><%= link_to "施設一覧", admins_facilities_path %></li>
-                  <li><%= link_to "会員一覧", admins_customers_path %></li>
-                  <li><%= link_to "予約一覧", admins_events_path %></li>
-                  <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></li>
-                </ul>
-                <p class="navbar-text navbar-right">管理者ログイン中</p>
-            </div>
-            <% else %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", root_path %></li>
-                  <li><%= link_to "アバウト", homes_about_path %></li>
-                  <li><%= link_to "施設一覧", facilities_path %></li>
-                </ul>
-                   <p class="navbar-text navbar-right">ようこそ ゲスト さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
-                  </p>
-            </div>
-            <% end %>
-        </div>
-      </nav>
-    </header>
+
+      <%= render 'layouts/header' %>
     <br>
     <br>
     <br>

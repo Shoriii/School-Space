@@ -56,17 +56,27 @@ h3 {
   padding: 0.5em;
   margin-bottom: 10px;
 }
-
+ tr:hover {
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1600em);
+}
 //テーブル
-.table-title {
-  border-left: solid 3px orange;
-  border-right: solid 1px #DDDDDD;
+.table {
+  border:solid 2px gray;
+  margin-top: 20px;
 }
-.table-box {
-  border: solid 1px #DDDDDD;
+ th {
+  font-size: 15px;
 }
+
+.event-heading {
+  font-size: 20px;
+  margin:10px 0;
+}
+
 .border {
   border-bottom:solid 2px gray;
+  background-color: #FFF5BF;
 }
 //フッター
  footer{

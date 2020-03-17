@@ -20,6 +20,7 @@ class Admins::FacilitiesController < ApplicationController
   end
   def show
       @facility = Facility.find(params[:id])
+      @events = @facility.events
   end
   def edit
       @facility = Facility.find(params[:id])
