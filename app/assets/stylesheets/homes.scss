@@ -29,33 +29,15 @@
 .btn-success {
   background: #EC715F
 }
-//カテゴリ
-#category {
-	background-color: #ECEFF1;
-	text-align: center;
+//セクション
+#category,#event,#facility {
   width: 100%;
 }
+//カテゴリ
 .category {
 	display: inline-block;
 	position: relative;
 	float:left;
-}
-.heading {
-	font-size: 32px;
-	color: #000000;
-	margin: 40px 0;
-	text-align: center;
-
-}
-
-.heading::after {
-	content: "";
-	display: block;
-	height: 3px;
-	width: 100px;
-	background-color: #EC715F;
-	margin: 8px auto 0 auto;
-
 }
 
 .box-title {
@@ -69,8 +51,7 @@
 .box1 {
 	height: 250px;
 	width: 300px;
-	margin-right: 10px;
-	margin-bottom: 10px;
+	margin:20px 10px 10px 0;
 	background-image: url(basketball.jpg);
 	background-size: cover;
 	background-position: center;
@@ -81,8 +62,7 @@
 .box2 {
 	height: 250px;
 	width: 300px;
-	margin-right: 10px;
-	margin-bottom: 10px;
+	margin:20px 10px 10px 0;
 	background-image: url(tennis.jpeg);
 	background-size: cover;
   background-position: center;
@@ -93,7 +73,7 @@
 .box3 {
 	height: 250px;
 	width: 300px;
-	margin-bottom: 10px;
+	margin:20px 0 10px 0;
 	background-image: url(tabletennis.jpeg);
 	background-size: cover;
   background-position: center;
@@ -105,7 +85,7 @@
 	height: 250px;
 	width: 300px;
 	margin-right: 10px;
-	margin-bottom: 90px;
+	margin-bottom: 20px;
 	background-image: url(swim.jpeg);
 	background-size: cover;
   background-position: center;
@@ -117,7 +97,7 @@
 	height: 250px;
 	width: 300px;
 	margin-right: 10px;
-	margin-bottom: 90px;
+	margin-bottom: 20px;
 	background-image: url(volleyball.jpeg);
 	background-size: cover;
   background-position: center;
@@ -128,7 +108,7 @@
 .box6 {
 	height: 250px;
 	width: 300px;
-	margin-bottom: 90px;
+	margin-bottom: 20px;
 	background-image: url(badminton.jpeg);
 	background-size: cover;
   background-position: center;

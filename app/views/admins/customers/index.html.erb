@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <h3>会員一覧</h3>
+    <h2>会員一覧</h2>
     <table class="table">
-      <tr>
+      <tr class="border">
         <th>会員ID</th>
         <th>氏名</th>
         <th>メールアドレス</th>
@@ -20,4 +20,5 @@
       <% end %>
     </table>
   </div>
+  <%= paginate @customers, class: "paginate" %>
 </div>

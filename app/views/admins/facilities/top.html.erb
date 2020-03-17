@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>トップページ</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="top-box">
+        <h3>最近登録した施設</h3>
+        <table class="table">
+          <tr class="border">
+            <th>登録日</th>
+            <th>施設名</th>
+            <th>カテゴリ</th>
+          </tr>
+          <tbody>
+          <% @facilities.each do |facility| %>
+            <tr>
+              <td><%= link_to facility.created_at.strftime("%Y-%m-%d"), admins_facility_path(facility.id) %></td>
+              <td><%= link_to facility.facility_name,admins_facility_path(facility.id) %></td>
+              <td><%= link_to facility.category.category_name,admins_facility_path(facility.id) %></td>
+            </tr>
+        <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="top-box">
+        <h3>最近予約された施設</h3>
+        <table class="table">
+          <tr class="border">
+            <th>予約日</th>
+            <th>施設名</th>
+            <th>予約者名</th>
+          </tr>
+          <tbody>
+            <% @events.each do |event| %>
+            <tr>
+              <td><%= event.created_at.strftime("%Y-%m-%d") %></td>
+              <td><%= event.facility.facility_name %></td>
+              <td><%= event.customer.last_name %><%= event.customer.first_name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

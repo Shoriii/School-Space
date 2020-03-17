@@ -22,36 +22,66 @@
 	box-sizing: border-box;
   font-family: 'M PLUS 1p', sans-serif;
  }
-.naver {
-  color:#F8F8F8;
-}
+ //header
+ a {
+   color:#333333;
+ }
+ //body
  body {
-  background-color: #FAFAFA;
+  background-color: #FCFBF8;
  }
 
  .container {
 	width: 950px;
-	margin: 0 auto;
+	margin-bottom: 60px;
 }
 
 //見出し
+.col-xs-12 {
+  padding: 0;
+}
 h2 {
-  padding: 0.25em 0.5em;/*上下 左右の余白*/
-  background: transparent;/*背景透明に*/
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #FFFFFF;/*背景色*/
   border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
 }
 
-//施設
-.table-title {
-  border-left: solid 3px orange;
-  border-right: solid 1px #DDDDDD;
+h3 {
+  color: black;
+  border-left: solid 4px orange;/*左側の線*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1;
+  padding: 0.5em;
+  margin-bottom: 10px;
 }
-.table-box {
-  border: solid 1px #DDDDDD;
+ tr:hover {
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1600em);
+}
+//テーブル
+.table {
+  border:solid 2px gray;
+  margin-top: 20px;
+}
+ th {
+  font-size: 15px;
+}
+
+.event-heading {
+  font-size: 20px;
+  margin:10px 0;
+}
+
+.border {
+  border-bottom:solid 2px gray;
+  background-color: #FFF5BF;
 }
 //フッター
  footer{
-	background-color:#F8F8F8;
+	background-color:#FFFFFF;
 	height:60px;
 	position:fixed;
 	bottom:0;
@@ -62,4 +92,67 @@ footer p {
   text-align: center;
   line-height: 60px;
   font-size: 20px;
+}
+//ボタン
+.btn-primary {
+  background-color: #4da6ff;
+}
+
+//ページネーション
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #4da6ff;
+  border-radius: 15px;
+}
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+//カレンダー
+.fc-left > h2 {
+  color: black;
+  font-size: 24px;
+  border-left: solid 4px orange;/*左側の線*/
+  background: none;/*背景色*/
+  border-bottom: none;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1;
+  padding: 0.5em;
+}
+$title:"予約済";
+$title:"キャンセル済";
+.fc-event-container> a {
+  @if $title =="予約済" {
+    background-color:#4169e1;
+  }
+  @else if $title == "キャンセル済" {
+  background-color:#dc143c;
+}
+}
+.note {
+  font-size: 18px;
+}
+.under-bule {
+  color: blue;
+  text-decoration : underline;
+}
+
+.under-red {
+  color: red;
+  text-decoration : underline;
+}
+.fc-view {
+  background-color: #FFFFFF;
+}
+.fc-sun {
+  color:#333333;
+  background-color:rgba(255,0,0,0.1);
+}
+.fc-sat {
+  color:#333333;
+  background-color:rgba(0,0,255,0.1);
 }

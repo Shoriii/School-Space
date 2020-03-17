@@ -1,19 +1,18 @@
 <div class="container">
   <div class= "row">
-  <div class= "row">
+  <div class="col-xs-12">
   <h2>施設一覧</h2>
+  </div>
   </div>
   <div class= "row">
   <%= link_to '新規登録', new_admins_facility_path, class:'btn btn-primary', style:'float:right;'%>
       <table class="table">
-        <thead>
-          <tr>
+          <tr class="border">
             <th>施設ID</th>
             <th>施設</th>
             <th>カテゴリ</th>
             <th>ステータス</th>
           </tr>
-        </thead>
       <tbody>
         <% @facilities.each do |facility| %>
         <tr>
@@ -26,4 +25,5 @@
       </tbody>
         </table>
     </div>
+    <%= paginate @facilities, class: "paginate" %>
 </div>

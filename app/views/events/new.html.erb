@@ -1,9 +1,10 @@
 <div class ="container">
   <div class= "row">
-    <div class= "col-xs-3">
+    <div class= "col-xs-12">
       <h2>新規登録画面</h2>
+      <h3>予約内容</h3>
     </div>
-  </div>
+
     <%= form_for(@event, url:confirm_events_path) do |f| %>
         <table class= "table">
         <tbody>
@@ -27,4 +28,5 @@
         </table>
         <%= f.submit "予約確認画面へ" ,class:"btn btn-primary"%>
       <% end %>
+  </div>
 </div>

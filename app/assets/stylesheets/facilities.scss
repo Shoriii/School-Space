@@ -1,11 +1,12 @@
 // Place all the styles related to the facilities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//施設一覧
 .facility-area {
   display:inline-block;
   float:left;
-  margin-right:30px;
-  padding: 20px 20px ;
+  margin: 20px 10px 20px 0;
   background-color: #ffffff;
   border: 3px solid #ffffff;
   box-shadow: 2px 2px 4px gray;
@@ -16,6 +17,11 @@
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-0.1875em);
 }
+
+.clearfix >.facility-area:nth-child(3),.facility-area:nth-child(6) {
+  margin-right: 0;
+}
+
 
 .facility-heading {
   color: black;
@@ -30,4 +36,14 @@ li {
   color: black;
   list-style: none;
   padding-top: 5px;
+}
+//施設詳細
+.table {
+  background-color: #ffffff;
+}
+
+.img {
+  height:316px;
+  width:400px;
+  box-shadow: 2px 2px 4px gray;
 }

@@ -1,9 +1,14 @@
 class Admins::FacilitiesController < ApplicationController
+  def top
+    @facilities = Facility.all.order("created_at DESC").limit(4)
+    @events= Event.all.order("created_at DESC").limit(4)
+  end
   def new
     @facility = Facility.new
   end
   def index
     @facilities = Facility.all
+    @facilities = Facility.page(params[:page]).reverse_order
   end
   def create
     @facility = Facility.new(facility_params)
@@ -15,6 +20,7 @@ class Admins::FacilitiesController < ApplicationController
   end
   def show
       @facility = Facility.find(params[:id])
+      @events = @facility.events
   end
   def edit
       @facility = Facility.find(params[:id])
