@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-3">
+    <h4>氏名</h4>
+  </div>
+  <div class="col-xs-4">
+      <%= render partial: "error_message", locals: {resource: resource, attr: :last_name} %>
+          <%= f.text_field :last_name,class:"form-control",  placeholder: "山田"%>
+  </div>
+  <div class="col-xs-4">
+  <%= render partial: "error_message", locals: {resource: resource, attr: :first_name} %>
+          <%= f.text_field :first_name,class:"form-control", placeholder: "太郎"%>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+      <h4>フリガナ</h4>
+  </div>
+  <div class="col-xs-4">
+        <%= render partial: "error_message", locals: {resource: resource, attr: :kana_last_name} %>
+        <%= f.text_field :kana_last_name,class:"form-control",placeholder: "ヤマダ" %>
+  </div>
+  <div class="col-xs-4">
+          <%= render partial: "error_message", locals: {resource: resource, attr: :kana_first_name} %>
+        <%= f.text_field :kana_first_name,class:"form-control",placeholder: "タロウ" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+      <h4>電話番号(ハイフンなし)</h4>
+  </div>
+  <div class="col-xs-8">
+      <%= render partial: "error_message", locals: {resource: resource, attr: :telephone } %>
+    <%= f.text_field :telephone, class:"form-control", placeholder: "0801235678" %>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3">
+      <h4>メールアドレス</h4>
+  </div>
+  <div class="col-xs-8">
+    <%= render partial: "error_message", locals: {resource: resource, attr: :email} %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "shoolspace@example.co.jp" %>
+
+  </div>
+</div>

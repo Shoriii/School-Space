@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_customer!
+
   def new
       @event = Event.new(facility_id: params[:facility_id])
   end

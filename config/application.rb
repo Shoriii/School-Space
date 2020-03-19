@@ -19,5 +19,6 @@ module SchoolSpace
     config.i18n.default_locale = :ja
     #日本時間に設定
     config.time_zone = 'Tokyo'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end
