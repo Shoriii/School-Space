@@ -1,0 +1,31 @@
+<div class="container">
+  <div class= "row">
+  <div class="col-xs-12">
+  <h2>コート一覧</h2>
+  </div>
+  </div>
+  <div class= "row">
+  <%= link_to '新規登録', new_admins_sub_facility_path, class:'btn btn-primary', style:'float:right;'%>
+      <table class="table">
+          <tr class="border">
+            <th>施設名</th>
+            <th>コート</th>
+            <th>コートナンバー</th>
+            <th>カテゴリ</th>
+            <th>ステータス</th>
+          </tr>
+      <tbody>
+        <% @sub_facilities.each do |sub_facility| %>
+        <tr>
+          <td><%= sub_facility.facility.facility_name %></td>
+          <td><%= sub_facility.sub_number %></td>
+          <td><%= sub_facility.sub_name %></td>
+          <td><%= sub_facility.category.category_name %></td>
+          <td><%= link_to sub_facility.facility.use_status ? "使用可" : "使用不可",admins_sub_facility_path(sub_facility.id) %></td>
+          <% end %>
+        </tr>
+      </tbody>
+        </table>
+    </div>
+    <%#= paginate @facilities, class: "paginate" %>
+</div>

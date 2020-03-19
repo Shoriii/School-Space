@@ -13,7 +13,7 @@
 	transition: all 0.3s ease 0s;
 }
 
-.facility-area:hover {
+.facility-area:hover,.sidebar-title:hover,.content:hover {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-0.1875em);
 }
@@ -46,4 +46,44 @@ li {
   height:316px;
   width:400px;
   box-shadow: 2px 2px 4px gray;
+}
+.sidebar {
+  margin-top: 20px;
+}
+
+.sidebar-title {
+  color: black;
+  border-left: solid 8px orange;/*左側の線*/
+  background-color: #ffffff;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 3.0;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  transition: all 0.3s ease 0s;
+}
+//コート一覧
+.sub-facility-box {
+  margin-top: 20px;
+  width: 680px;
+  border: 3px solid #ffffff;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.content {
+	display: flex;
+	padding: 20px;
+  box-sizing: border-box;
+  height: 200px;
+  transition: all 0.3s ease 0s;
+}
+.sub-facility-img {
+		margin-right: 20px;
+		width: 160px;
+		height: 160px;
+}
+img {
+			min-width: 150px;
+			max-width: 150%;
+			vertical-align: top;
 }

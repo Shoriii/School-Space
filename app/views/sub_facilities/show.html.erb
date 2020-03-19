@@ -1,0 +1,40 @@
+<div class ="container">
+  <div class= "row">
+    <div class= "col-xs-12">
+      <h2>詳細画面</h2>
+    </div>
+  </div>
+    <div class= "row">
+      <div class= "col-xs-7">
+      <h3>コート画像</h3>
+        <div class="img"><%= attachment_image_tag @sub_facility,:sub_image,:fill,400,316,format:'jpeg',fallback: "no_image.jpg" %></div>
+      </div>
+      <div class= "col-xs-5">
+      <h3>コート紹介</h3>
+        <table class= "table">
+        <tbody>
+        <tr>
+            <td >施設名</td>
+            <td><%= @sub_facility.facility.facility_name %></td>
+          </tr>
+          <tr>
+            <td>コート名</td>
+            <td><%= @sub_facility.sub_name %></td>
+          </tr>
+          <tr>
+            <td>コートナンバー</td>
+            <td><%= @sub_facility.sub_number %></td>
+          </tr>
+          <tr>
+            <td >カテゴリ</td>
+            <td><%= @sub_facility.category.category_name %></td>
+          </tr>
+            <td>詳細内容</td>
+            <td><%= @sub_facility.body %></td>
+          </tr>
+          </tbody>
+        </table>
+        <%= link_to "戻る" , :back,class:"btn btn-primary"%>
+      </div>
+    </div>
+</div>

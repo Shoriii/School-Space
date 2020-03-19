@@ -13,6 +13,10 @@
             <td><%= f.hidden_field :facility_id %><%= f.hidden_field :customer_id %><%= f.select :title,[["予約",'予約済'],["キャンセル",'キャンセル済']] %></td>
           </tr>
           <tr>
+            <td>コートナンバー</td>
+            <td><%= f.select :number,[["①",'①'],["②",'②'],["③",'③'],["④",'④']],include_blank: "--選択してください--" %></td>
+          </tr>
+          <tr>
             <td>ご利用開始時間</td>
             <td><%= f.datetime_select :start_at %></td>
           </tr>
@@ -22,7 +26,7 @@
           </tr>
           <tr>
             <td>ご利用人数</td>
-            <td><%= f.select :people,[["1人",'1人'],["2人",'2人'],["3人",'3人'],["4人",'5人'],["6人",'6人'],["7人以上",'7人以上']],include_blank: "--選択してください--" %></td>
+            <td><%= f.select :people,[["1人",'1人'],["2人",'2人'],["3人",'3人'],["4人",'4人'],["5人",'5人'],["6人以上",'6人以上']],include_blank: "--選択してください--" %></td>
           </tr>
           </tbody>
         </table>

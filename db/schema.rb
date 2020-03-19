@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_094215) do
+ActiveRecord::Schema.define(version: 2020_03_17_084813) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_094215) do
   create_table "events", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "facility_id", null: false
+    t.string "number", null: false
     t.integer "title", default: 0, null: false
     t.string "people", null: false
     t.datetime "start_at", null: false
@@ -63,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_094215) do
   end
 
   create_table "facilities", force: :cascade do |t|
-    t.integer "category_id", null: false
     t.string "facility_name", null: false
     t.text "address", null: false
     t.string "facility_phone", null: false
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 2020_03_12_094215) do
     t.string "facility_image_id", null: false
     t.boolean "use_status", default: true, null: false
     t.text "introduction", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_facilities", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "facility_id", null: false
+    t.string "sub_name", null: false
+    t.string "sub_image_id", null: false
+    t.string "sub_number", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

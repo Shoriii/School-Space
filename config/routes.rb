@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     end
     resources :categories, only: [:index,:create,:edit,:update]
     resources :events, only: [:index, :show, :edit, :update]
+    resources :sub_facilities, except: [:destroy]
   end
 
   ##会員側
@@ -38,7 +39,11 @@ Rails.application.routes.draw do
         post 'confirm'
     end
   end
+  get 'facilities/:facility_id/calendar' ,to: 'facilities#calendar', as: 'facilities_calendar'
   resources :facilities, only: [:index,:show]
+
+  get 'facilities/:facility_id/sub_facilities' ,to: 'sub_facilities#index', as: 'sub_facility_facilities'
+  resources :sub_facilities, only: [:index,:show]
 
   get 'homes/about' => 'homes#about'
 
