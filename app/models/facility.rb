@@ -3,7 +3,11 @@ class Facility < ApplicationRecord
   has_many :customers,  through: :events
   has_many :sub_facilities, dependent: :destroy
   has_many :categories,  through: :sub_facilities
+  has_many :favorites
   attachment :facility_image
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
   #バリデーション
   with_options presence: true do
     validates :facility_name, length: {minimum: 1}

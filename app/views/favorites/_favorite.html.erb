@@ -1,0 +1,10 @@
+<!--いいね-->
+      <% if @facility.favorited_by?(current_customer) %>
+        <%= link_to facility_favorites_path(@facility, redirect_id: 0), method: :delete, remote: true do %>
+          <span class="glyphicon glyphicon-heart"><%= @facility.favorites.count%></span>
+        <% end %>
+        <% else %>
+        <%= link_to facility_favorites_path(@facility, redirect_id: 0), method: :post, remote: true do %>
+          <span class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span>
+        <% end %>
+      <% end %>

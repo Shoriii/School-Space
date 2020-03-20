@@ -28,4 +28,5 @@ class Customer < ApplicationRecord
     end
   has_many :events, dependent: :destroy
   has_many :facilities,  through: :events
+  has_many :favorites
 end

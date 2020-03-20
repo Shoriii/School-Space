@@ -9,7 +9,7 @@
 #管理者
 Admin.create do |a|
   a.id = 1
-  a.email = 'a@a'
+  a.email = 'a@a.co.jp'
   a.password = 'aaaaaa'
 end
 
@@ -21,7 +21,7 @@ Customer.create do |a|
   a.kana_last_name = 'ヤマダ'
   a.kana_first_name = 'タロウ'
   a.telephone = '08088888888'
-  a.email = 'a@a'
+  a.email = 'a@a.co.jp'
   a.member_status = true
   a.password = 'aaaaaa'
 end

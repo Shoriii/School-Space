@@ -15,7 +15,12 @@
       </div>
       <div class= "col-xs-9">
       <h3>施設画像</h3>
-      <div class="sub-img"><%= attachment_image_tag @facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %></div>
+      <div class="sub-img">
+        <%= attachment_image_tag @facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %>
+        <div class="facilities_<%= @facility.id %>">
+          <%= render 'favorites/favorite',facility: @facility %>
+        </div>
+      </div>
       <h3>施設紹介</h3>
         <table class= "table">
         <tbody>

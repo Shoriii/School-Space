@@ -1,0 +1,5 @@
+if (location.pathname == '/facilities') {
+  $(".facilities_<%= @facility.id %>").html("<%= j(render 'favorites/favorite',  facility: @facility ) %>")
+} else {
+  $(".facilities_<%= @facility.id %>").html("<%= j(render 'favorites/favorite',  facility: @facility ) %>")
+}
