@@ -14,6 +14,7 @@ Rails.application.routes.draw do
  ##管理者側
   namespace :admins do
     resources :customers, only: [:index,:show,:edit,:update]
+    get 'facilities/:facility_id/calendar' ,to: 'facilities#calendar', as: 'facilities_calendar'
     resources :facilities, except: [:destroy] do
       collection do
         get 'top'
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
     end
     resources :categories, only: [:index,:create,:edit,:update]
     resources :events, only: [:index, :show, :edit, :update]
+    get 'facilities/:facility_id/sub_facilities' ,to: 'sub_facilities#index', as: 'sub_facility_facilities'
     resources :sub_facilities, except: [:destroy]
   end
 

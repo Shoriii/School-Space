@@ -33,6 +33,10 @@ class Admins::FacilitiesController < ApplicationController
       render 'edit'
     end
   end
+  def calendar
+    @events = Event.where(facility_id: params[:facility_id])
+    @facility = Event.where(facility_id: params[:facility_id])
+end
   private
   def facility_params
     params.require(:facility).permit(:facility_name, :facility_image, :address, :date, :lending_time, :facility_phone, :introduction, :use_status)
