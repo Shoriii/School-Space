@@ -18,6 +18,15 @@ class Admins::EventsController < ApplicationController
       render 'show'
     end
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+       redirect_to admins_events_path
+    else
+    	 render action: :destroy
+    end
+  end
   private
   def event_params
     params.require(:event).permit(:title, :start_at, :end_at, :people, :facility_id)
