@@ -5,47 +5,37 @@
     </div>
   </div>
     <div class= "row">
-    <%= form_for(@facility, url:admins_facilities_path) do |f| %>
+    <%= form_for(@sub_facility, url:admins_sub_facilities_path) do |f| %>
       <div class= "col-xs-7">
-      <h3>施設画像</h3>
+      <h3>コート画像</h3>
       <div id="image_view"></div>
-      <%= attachment_image_tag @facility,:facility_image,:fill,300,200,format:'jpeg', fallback: "no_image.jpg",id:"orgin_img" %>
-              <%= f.attachment_field :facility_image, id: "image_btn" %>
+      <%= attachment_image_tag @sub_facility,:sub_image,:fill,300,200,format:'jpeg',fallback: "no_image.jpg", id:"orgin_img" %>
+              <%= f.attachment_field :sub_image, id: "image_btn" %>
       </div>
       <div class= "col-xs-5">
-      <h3>施設紹介</h3>
+      <h3>コート紹介</h3>
         <table class= "table">
         <tbody>
-          <tr>
-            <td>施設名</td>
-            <td><%= f.text_field :facility_name %></td>
+        <tr>
+            <td >施設名</td>
+            <td><%= f.collection_select :facility_id, Facility.all, :id, :facility_name, include_blank: "--選択してください--" %></td>
           </tr>
           <tr>
-            <td>住所</td>
-            <td><%= f.text_area :address %></td>
+            <td>コート名</td>
+            <td><%= f.text_field :sub_name %></td>
           </tr>
           <tr>
-            <td>解放日</td>
-            <td><%= f.text_field :date%></td>
+            <td>コートナンバー</td>
+            <td><%= f.select :sub_number,[["①",'①'],["②",'②'],["③",'③'],["④",'④']],include_blank: "--選択してください--" %></td>
           </tr>
           <tr>
-            <td>解放時間</td>
-            <td><%= f.text_field :lending_time %></td>
+            <td >カテゴリ</td>
+            <td><%= f.collection_select :category_id, Category.all, :id, :category_name, include_blank: "--選択してください--" %></td>
           </tr>
-          <tr>
-            <td>TEL</td>
-            <td><%= f.text_field :facility_phone %></td>
-          </tr>
-          <tr>
-            <td>紹介文</td>
-            <td><%= f.text_area :introduction %></td>
-          </tr>
-          <tr>
-            <td>使用ステータス</td>
-            <td><%= f.select :use_status,[["使用可",'使用可'],["使用不可",'使用不可']] %></td>
+            <td>詳細内容</td>
+            <td><%= f.text_area :body %></td>
           </tr>
           </tbody>
-
         </table>
         <%= f.submit "新規登録" ,class:"btn btn-primary next"%>
       </div>

@@ -35,6 +35,6 @@ class Admins::FacilitiesController < ApplicationController
   end
   private
   def facility_params
-    params.require(:facility).permit(:facility_name, :facility_image, :address, :date, :lending_time, :facility_phone, :introduction, :use_status, :category_name, :category_id)
+    params.require(:facility).permit(:facility_name, :facility_image, :address, :date, :lending_time, :facility_phone, :introduction, :use_status)
   end
 end

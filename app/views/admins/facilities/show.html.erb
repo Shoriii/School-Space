@@ -7,7 +7,7 @@
     <div class= "row">
       <div class= "col-xs-7">
       <h3>施設画像</h3>
-      <div class="img"><%= attachment_image_tag @facility,:facility_image,:fill,400,316,format:'jpeg' %></div>
+      <div class="img"><%= attachment_image_tag @facility,:facility_image,:fill,400,316,format:'jpeg',fallback: "no_image.jpg" %></div>
       </div>
       <div class= "col-xs-5">
       <h3>施設紹介</h3>
@@ -16,10 +16,6 @@
           <tr>
             <td>施設名</td>
             <td><%=  @facility.facility_name %></td>
-          </tr>
-          <tr>
-            <td>カテゴリ</td>
-            <td><%= @facility.category.category_name %></td>
           </tr>
           <tr>
             <td>住所</td>

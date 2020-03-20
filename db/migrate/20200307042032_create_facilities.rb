@@ -1,7 +1,6 @@
 class CreateFacilities < ActiveRecord::Migration[5.2]
   def change
     create_table :facilities do |t|
-      t.integer :category_id, null: false
       t.string :facility_name, null: false
       t.text :address, null: false
       t.string :facility_phone, null: false

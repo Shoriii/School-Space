@@ -13,6 +13,10 @@
     <td><%= @event.title ? "予約" : "キャンセル" %>
     </tr>
     <tr>
+    <td>コートナンバー</td>
+    <td><%= @event.number %>
+    </tr>
+    <tr>
     <td>予約開始時間</td>
     <td><%= @event.start_at.strftime("%Y-%m-%d %H:%M") %>
     </tr>
@@ -31,6 +35,7 @@
       <%= form_for(@event) do |f| %>
       <%= f.hidden_field :title, value: @event.title  %>
       <%= f.hidden_field :facility_id %>
+      <%= f.hidden_field :number, value: @event.number  %>
       <%= f.hidden_field :start_at, value: @event.start_at  %>
       <%= f.hidden_field :end_at, value: @event.end_at  %>
       <%= f.hidden_field :people, value: @event.people  %>

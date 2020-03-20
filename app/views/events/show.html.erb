@@ -41,12 +41,16 @@
               <td>予約施設</td>
               <td><%= @event.facility.facility_name %></td>
             </tr>
+          <tr>
+            <td>コートナンバー</td>
+            <td><%= @event.number %></td>
+          </tr>
             <tr>
-              <td>予約開始時間</td>
+              <td>ご利用開始時間</td>
               <td><%= @event.start_at.strftime("%Y-%m-%d %H:%M") %></td>
             </tr>
             <tr>
-              <td>予約終了時間</td>
+              <td>ご利用終了時間</td>
               <td><%= @event.end_at.strftime("%Y-%m-%d %H:%M") %></td>
             </tr>
             <tr>

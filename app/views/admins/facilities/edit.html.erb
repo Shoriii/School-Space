@@ -9,7 +9,7 @@
       <div class= "col-xs-7">
       <h3>施設画像</h3>
       <div id="image_view"></div>
-      <%= attachment_image_tag @facility,:facility_image,:fill,400,316,format:'jpeg',id:"orgin_img" %>
+      <%= attachment_image_tag @facility,:facility_image,:fill,400,316,format:'jpeg',fallback: "no_image.jpg", id:"orgin_img" %>
               <%= f.attachment_field :facility_image, id: "image_btn" %>
       </div>
       <div class= "col-xs-5">
@@ -19,10 +19,6 @@
           <tr>
             <td>施設名</td>
             <td><%= f.text_field :facility_name %></td>
-          </tr>
-          <tr>
-            <td>カテゴリ</td>
-            <td><%= f.collection_select :category_id, Category.all, :id, :category_name, include_blank: "--選択してください--" %></td>
           </tr>
           <tr>
             <td>住所</td>

@@ -42,6 +42,14 @@
             <td><%= @event.facility.facility_name %></td>
           </tr>
           <tr>
+            <td>使用コート</td>
+            <td><%= @event.facility.sub_facility.sub_name %></td>
+          </tr>
+          <tr>
+            <td>コートナンバー</td>
+            <td><%= @event.facility.sub_facility.sub_number %></td>
+          </tr>
+          <tr>
             <td>予約開始時間</td>
             <td><%= @event.start_at.strftime("%Y-%m-%d %H:%M") %></td>
           </tr>

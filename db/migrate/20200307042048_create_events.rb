@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
     create_table :events do |t|
       t.integer :customer_id, null: false
       t.integer :facility_id, null: false
+      t.string :number,null: false
       t.integer :title, null: false, default:0
       t.string :people,null: false
       t.datetime :start_at,null: false
