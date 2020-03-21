@@ -43,7 +43,8 @@ Rails.application.routes.draw do
   end
   get 'facilities/:facility_id/calendar' ,to: 'facilities#calendar', as: 'facilities_calendar'
   resources :facilities, only: [:index,:show] do
-  resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+    resource :facility_comments, only: [:create, :destroy]
   end
   get 'facilities/:facility_id/sub_facilities' ,to: 'sub_facilities#index', as: 'sub_facility_facilities'
   resources :sub_facilities, only: [:index,:show]

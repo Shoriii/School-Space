@@ -10,6 +10,8 @@ class FacilitiesController < ApplicationController
   end
   def show
      @facility = Facility.find(params[:id])
+     @facility_comment = FacilityComment.new
+     @facility_comments = @facility.facility_comments
   end
   def calendar
       @events = Event.where(facility_id: params[:facility_id])

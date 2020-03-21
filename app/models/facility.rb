@@ -4,6 +4,7 @@ class Facility < ApplicationRecord
   has_many :sub_facilities, dependent: :destroy
   has_many :categories,  through: :sub_facilities
   has_many :favorites
+  has_many :facility_comments
   attachment :facility_image
   def favorited_by?(customer)
     favorites.where(customer_id: customer.id).exists?

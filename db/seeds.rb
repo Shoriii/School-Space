@@ -26,6 +26,17 @@ Customer.create do |a|
   a.password = 'aaaaaa'
 end
 
+Customer.create do |a|
+  a.id = 2
+  a.last_name = '木村'
+  a.first_name = '拓哉'
+  a.kana_last_name = 'キムラ'
+  a.kana_first_name = 'タクヤ'
+  a.telephone = '08088888888'
+  a.email = 'z@z.co.jp'
+  a.member_status = true
+  a.password = 'aaaaaa'
+end
 #カテゴリ
 Category.create do |a|
   a.id = 1

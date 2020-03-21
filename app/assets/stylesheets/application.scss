@@ -133,15 +133,7 @@ footer p {
   line-height: 1;
   padding: 0.5em;
 }
-$title:'予約済';
-.fc-content {
-  @if $title == '予約済' {
-    background-color:#4169e1;
-  }
-  @else if $title == 'キャンセル済' {
-  background-color:#dc143c;
-}
-}
+
 .note {
   font-size: 18px;
 }

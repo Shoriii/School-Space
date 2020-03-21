@@ -17,9 +17,11 @@
       <h3>施設画像</h3>
       <div class="sub-img">
         <%= attachment_image_tag @facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %>
+        <!--いいね-->
         <div class="facilities_<%= @facility.id %>">
           <%= render 'favorites/favorite',facility: @facility %>
         </div>
+        <!---------->
       </div>
       <h3>施設紹介</h3>
         <table class= "table">
@@ -50,6 +52,19 @@
           </tr>
           </tbody>
       </table>
+      <!--コメント-->
+      <h3>コメント一覧</h3>
+      <div id="js-comment">
+      <%= render 'facility_comments/comments', facility_comments: @facility_comments %>
+      </div>
+       <h3>コメント投稿</h3>
+    <div class="comment-form">
+      <%= form_with model: [@facility, @facility_comment], data:{ remote: true } do |f| %>
+        <%= f.text_area :comment, style:'width:100%;height:100px;' %>
+        <%= f.submit '送信', class:'btn btn-primary' %>
+      <% end %>
+    </div>
+      <!--------->
     </div>
   </div>
 </div>
