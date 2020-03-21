@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   ##会員側
   root to: 'homes#top'
   resource :customer, only: [:show, :edit, :update, :destroy] do
+    resources :favorites, only: [:index]
     member do
       get 'withdraw'
     end
