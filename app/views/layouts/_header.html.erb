@@ -2,7 +2,7 @@
       <nav class="navbar navbar-light navbar-fixed-top", style="background-color:#ffffff;box-shadow: 1px 1px 1px gray;">
         <div class="container-fluid">
           <div class="navbar-header">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="root_path">
                 School-Space<p>-スクスペ-</p>
               </a>
             </div>
@@ -36,6 +36,8 @@
                   <li><%= link_to "ホーム", root_path %></li>
                   <li><%= link_to "アバウト", homes_about_path %></li>
                   <li><%= link_to "施設一覧", facilities_path %></li>
+                  <li><%= link_to "ログイン", new_customer_session_path %></li>
+                  <li><%= link_to "新規登録", new_customer_registration_path %></li>
                 </ul>
                    <p class="navbar-text navbar-right">ようこそ ゲスト さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
                   </p>
