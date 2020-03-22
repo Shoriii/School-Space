@@ -34,7 +34,7 @@ $('#calendar').fullCalendar({
     <% @events.each do |event| %>
     {
 
-      title:'<%= event.number %> <%= event.title %>',
+      title:'<%= event.number %> <%= event.title %>/<%= event.customer.last_name %>(<%= event.people %>)',
       start:'<%= event.start_at.strftime("%Y-%m-%d %H:%M") %>',
       end: '<%= event.end_at.strftime("%Y-%m-%d %H:%M") %>'
     },
@@ -71,9 +71,12 @@ $('#calendar').fullCalendar({
   timeFormat: "HH:mm",
   //イベントの文字色
   eventTextColor: '#ffffff',
+  //クリックしたイベントのタイトルを取る
+  eventClick: function(item, jsEvent, view) {
+    alert('予約内容' + item.title);
+  }
 });
 //イベントタイトルに応じて色を変更
  $(".fc-content:contains('予約済')").css("background-color","#4169e1");
  $(".fc-content:contains('キャンセル済')").css("background-color","#dc143c");
 </script>
-fc-day-grid-event 
