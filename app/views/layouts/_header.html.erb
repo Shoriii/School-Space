@@ -1,5 +1,5 @@
 <header>
-      <nav class="navbar navbar-light navbar-fixed-top", style="background-color:#ffffff;box-shadow: 1px 1px 1px gray;">
+      <nav class="navbar navbar-light navbar-fixed-top", style="background-color:#ffffff;box-shadow: 1px 1px 1px gray;height:80px;">
         <div class="container-fluid">
           <div class="navbar-header">
               <a class="navbar-brand" href="root_path">
@@ -7,49 +7,92 @@
               </a>
             </div>
               <% if customer_signed_in? && request.fullpath.index("/admins/") == nil %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", root_path %></li>
-                  <li><%= link_to "アバウト", homes_about_path %></li>
-                  <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "マイページ", customer_path %></li>
-                  <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-                </ul>
+              <div id="sp-menu">
+                    <ul>
+                      <li><%= link_to "ホーム", root_path %></li>
+                      <li><%= link_to "アバウト", homes_about_path %></li>
+                      <li><%= link_to "施設一覧", facilities_path %></li>
+                      <li><%= link_to "マイページ", customer_path %></li>
+                      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+                      <li><%= link_to "管理者はこちら", admin_session_path %></li>
+                    </ul>
+                  </div>
+                  <div id="hm-icon">
+                    <a class="menu-trigger" href="#">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </div>
                 <div class="serch-form">
-                  <%= search_form_for @q, url: search_facilities_path, class: "form-inline navbar-form navbar-right" do |f| %>
+                  <%= search_form_for @q, url: search_facilities_path, class: "form-inline navbar-form navbar-nav" do |f| %>
                     <div class="form-group">
                       <%= f.label :facility_name_or_introduction_cont, 'Title', class: 'control-label sr-only' %>
                       <%= f.search_field :facility_name_or_introduction_cont,  autofocus: true, placeholder: "施設を検索", class: 'form-control' %>
                     </div>
                     <%= f.submit class: "btn btn-default" %>
                   <% end %>
-        </div>
-                  <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
-                  </p>
+                  </div>
+                  <p class="navbar-text navbar-left">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。</p>
             </div>
             <% elsif admin_signed_in? %>
             <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", top_admins_facilities_path %></li>
-                  <li><%= link_to "施設一覧", admins_facilities_path %></li>
-                  <li><%= link_to "サブ施設一覧", admins_sub_facilities_path %></li>
-                  <li><%= link_to "会員一覧", admins_customers_path %></li>
-                  <li><%= link_to "予約一覧", admins_events_path %></li>
-                  <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></li>
-                </ul>
-                <p class="navbar-text navbar-right">管理者ログイン中</p>
+              <div id="sp-menu">
+                    <ul>
+                      <li><%= link_to "ホーム", top_admins_facilities_path %></li>
+                      <li><%= link_to "施設一覧", admins_facilities_path %></li>
+                      <li><%= link_to "サブ施設一覧", admins_sub_facilities_path %></li>
+                      <li><%= link_to "会員一覧", admins_customers_path %></li>
+                      <li><%= link_to "予約一覧", admins_events_path %></li>
+                      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></li>
+                    </ul>
+                  </div>
+                  <div id="hm-icon">
+                    <a class="menu-trigger" href="#">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </div>
+                <div class="serch-form">
+                  <%= search_form_for @q, url: search_facilities_path, class: "form-inline navbar-form navbar-nav" do |f| %>
+                    <div class="form-group">
+                      <%= f.label :facility_name_or_introduction_cont, 'Title', class: 'control-label sr-only' %>
+                      <%= f.search_field :facility_name_or_introduction_cont,  autofocus: true, placeholder: "施設を検索", class: 'form-control' %>
+                    </div>
+                    <%= f.submit class: "btn btn-default" %>
+                  <% end %>
+                  </div>
+                  <p class="navbar-text navbar-left">管理者ログイン中</p>
             </div>
             <% else %>
-            <div class="collapse navbar-collapse" id="navbarEexample8">
-                <ul class="nav navbar-nav">
-                  <li><%= link_to "ホーム", root_path %></li>
-                  <li><%= link_to "アバウト", homes_about_path %></li>
-                  <li><%= link_to "施設一覧", facilities_path %></li>
-                  <li><%= link_to "ログイン", new_customer_session_path %></li>
-                  <li><%= link_to "新規登録", new_customer_registration_path %></li>
-                </ul>
-                   <p class="navbar-text navbar-right">ようこそ ゲスト さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
-                  </p>
+            <div id="sp-menu">
+                    <ul>
+                     <li><%= link_to "ホーム", root_path %></li>
+                     <li><%= link_to "アバウト", homes_about_path %></li>
+                     <li><%= link_to "施設一覧", facilities_path %></li>
+                     <li><%= link_to "ログイン", new_customer_session_path %></li>
+                     <li><%= link_to "新規登録", new_customer_registration_path %></li>
+                     <li><%= link_to "管理者はこちら", admin_session_path %></li>
+                    </ul>
+                  </div>
+                  <div id="hm-icon">
+                    <a class="menu-trigger" href="#">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </div>
+                <div class="serch-form">
+                  <%= search_form_for @q, url: search_facilities_path, class: "form-inline navbar-form navbar-nav" do |f| %>
+                    <div class="form-group">
+                      <%= f.label :facility_name_or_introduction_cont, 'Title', class: 'control-label sr-only' %>
+                      <%= f.search_field :facility_name_or_introduction_cont,  autofocus: true, placeholder: "施設を検索", class: 'form-control' %>
+                    </div>
+                    <%= f.submit class: "btn btn-default" %>
+                  <% end %>
+                  </div>
+                  <p class="navbar-text navbar-left">ようこそ ゲスト さん。</p>
             </div>
             <% end %>
         </div>
