@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   end
   get 'facilities/:facility_id/calendar' ,to: 'facilities#calendar', as: 'facilities_calendar'
   resources :facilities, only: [:index,:show] do
+    get 'search', on: :collection
     resource :favorites, only: [:create, :destroy]
     resource :facility_comments, only: [:create, :destroy]
   end

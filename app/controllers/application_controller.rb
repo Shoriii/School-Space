@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search_facility
 
-
+  private
+  def set_search_facility
+    # 検索バー表示
+    @q = Facility.ransack(params[:q])
+  end
 
 protected
   def configure_permitted_parameters

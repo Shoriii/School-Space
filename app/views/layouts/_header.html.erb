@@ -15,6 +15,15 @@
                   <li><%= link_to "マイページ", customer_path %></li>
                   <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
                 </ul>
+                <div class="serch-form">
+                  <%= search_form_for @q, url: search_facilities_path, class: "form-inline navbar-form navbar-right" do |f| %>
+                    <div class="form-group">
+                      <%= f.label :facility_name_or_introduction_cont, 'Title', class: 'control-label sr-only' %>
+                      <%= f.search_field :facility_name_or_introduction_cont,  autofocus: true, placeholder: "施設を検索", class: 'form-control' %>
+                    </div>
+                    <%= f.submit class: "btn btn-default" %>
+                  <% end %>
+        </div>
                   <p class="navbar-text navbar-right">ようこそ <%= current_customer.last_name + current_customer.first_name %> さん。<%= link_to "管理者はこちら", admin_session_path, class:'btn btn-success' %>
                   </p>
             </div>
