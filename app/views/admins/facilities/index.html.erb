@@ -16,10 +16,12 @@
       <tbody>
         <% @facilities.each do |facility| %>
         <tr>
+          <%= link_to(admins_facility_path(facility.id), class: 'list-content') do %>
           <td><%= facility.id %></td>
           <td><%= link_to facility.facility_name,admins_facility_path(facility.id) %></td>
           <td><%#= facility.category.category_name %></td>
           <td><%= facility.use_status ? "使用可" : "使用不可" %></td>
+          <% end %>
           <% end %>
         </tr>
       </tbody>

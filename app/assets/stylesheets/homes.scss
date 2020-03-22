@@ -7,11 +7,34 @@
 	height: 650px;
 	width: 100%;
 	text-align: center;
-	background-image: url("TSU89_goal_TP_V.jpg");
-	background-position: center;
-	background-size: cover;
+}
+#container{
+  height: 650px;
+  position: relative;
 }
 
+#screen {
+  background-color: #000000;
+}
+#screen .image1,#screen .image2,#screen .image3,#screen .image4 {
+  display: block;
+  opacity: 0.7;
+}
+.image1 {
+	background-image: url("TSU89_goal_TP_V.jpg");
+}
+.image2 {
+	background-image: url("image2.jpg");
+}
+.image3 {
+	background-image: url("image3.jpg");
+}
+.image4 {
+	background-image: url("image4.jpg");
+}
+.mv-content {
+  position: absolute; top:0; left:500px;
+}
 .mv-title {
 	padding-top: 200px;
 	padding-bottom: 10px;

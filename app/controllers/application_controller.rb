@@ -14,8 +14,8 @@ protected
   end
   # ログイン後に遷移するpathを設定
   def after_sign_in_path_for(resource)
-    if resource.instance_of?(Admins)
-      admins_facilities_path
+    if resource.instance_of?(Admin)
+      top_admins_facilities_path
     elsif resource.instance_of?(Customer)
       root_path
     else

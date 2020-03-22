@@ -1,0 +1,43 @@
+<h3>施設画像</h3>
+      <div class="sub-img">
+        <%= attachment_image_tag facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %>
+        <!--いいね-->
+        <div class="facilities_<%= facility.id %>">
+          <%= render 'favorites/favorite',facility: facility %>
+        </div>
+        <!---------->
+      </div>
+      <h3>施設紹介</h3>
+        <table class= "table">
+        <tbody>
+          <tr>
+            <td>施設名</td>
+            <td><%= facility.facility_name %></td>
+          </tr>
+
+            <td>住所</td>
+            <td><%= facility.address %></td>
+          </tr>
+          <tr>
+            <td>解放日</td>
+            <td><%= facility.date%></td>
+          </tr>
+          <tr>
+            <td>解放時間</td>
+            <td><%= facility.lending_time %></td>
+          </tr>
+          <tr>
+            <td>TEL</td>
+            <td><%= facility.facility_phone %></td>
+          </tr>
+          <tr>
+            <td>紹介文</td>
+            <td><%= facility.introduction %></td>
+          </tr>
+          </tbody>
+      </table>
+      <!--コメント-->
+      <h3>コメント一覧</h3>
+      <div id="js-comment">
+      <%= render 'facility_comments/comments', facility_comments: @facility_comments %>
+      </div>

@@ -21,6 +21,7 @@ class Admins::FacilitiesController < ApplicationController
   def show
       @facility = Facility.find(params[:id])
       @events = @facility.events
+      @facility_comments = @facility.facility_comments
   end
   def edit
       @facility = Facility.find(params[:id])

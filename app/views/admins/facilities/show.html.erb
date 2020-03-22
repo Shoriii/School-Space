@@ -16,6 +16,7 @@
       <div class= "col-xs-9">
       <h3>施設画像</h3>
       <div class="sub-img"><%= attachment_image_tag @facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %></div>
+      <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span>
       <h3>施設紹介</h3>
         <table class= "table">
         <tbody>
@@ -45,6 +46,11 @@
           </tr>
           </tbody>
       </table>
+      <!--コメント-->
+      <h3>コメント一覧</h3>
+      <div id="js-comment">
+      <%= render 'facility_comments/comments', facility_comments: @facility_comments %>
+      </div>
     </div>
   </div>
 </div>
