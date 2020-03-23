@@ -9,8 +9,8 @@
               <% if customer_signed_in? && request.fullpath.index("/admins/") == nil %>
               <div id="sp-menu">
                     <ul>
-                      <li><%= link_to "ホーム", root_path %></li>
-                      <li><%= link_to "アバウト", homes_about_path %></li>
+                      <li><%= link_to "トップ", root_path %></li>
+                      <li><%= link_to "スクスペとは？", homes_about_path %></li>
                       <li><%= link_to "施設一覧", facilities_path %></li>
                       <li><%= link_to "マイページ", customer_path %></li>
                       <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarEexample8">
               <div id="sp-menu">
                     <ul>
-                      <li><%= link_to "ホーム", top_admins_facilities_path %></li>
+                      <li><%= link_to "トップ", top_admins_facilities_path %></li>
                       <li><%= link_to "施設一覧", admins_facilities_path %></li>
                       <li><%= link_to "サブ施設一覧", admins_sub_facilities_path %></li>
                       <li><%= link_to "会員一覧", admins_customers_path %></li>
@@ -68,8 +68,8 @@
             <% else %>
             <div id="sp-menu">
                     <ul>
-                     <li><%= link_to "ホーム", root_path %></li>
-                     <li><%= link_to "アバウト", homes_about_path %></li>
+                     <li><%= link_to "トップ", root_path %></li>
+                     <li><%= link_to "スクスペとは？", homes_about_path %></li>
                      <li><%= link_to "施設一覧", facilities_path %></li>
                      <li><%= link_to "ログイン", new_customer_session_path %></li>
                      <li><%= link_to "新規登録", new_customer_registration_path %></li>

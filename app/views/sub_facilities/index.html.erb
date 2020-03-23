@@ -6,7 +6,7 @@
   </div>
     <div class= "row">
       <div class= "col-xs-12">
-      <div class="sub-img"><%#= attachment_image_tag @facility,:facility_image,:fill,1140,380,format:'jpeg' %><%#= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%></div>
+      <div class="sub-img"></div>
       </div>
     </div>
     <div class="row">
@@ -25,18 +25,26 @@
       <% @sub_facilities.each do |sub_facility| %>
        <div class="sub-facility-box clearfix">
         <div class="content">
+        <%= link_to(sub_facility_path(sub_facility) , class: 'list-content') do %>
           <div class="sub-facility-img">
             <div><%= attachment_image_tag sub_facility,:sub_image,:fill,150,150,format:'jpeg' %></div>
           </div>
           <div class="text_content">
-            <h4><%= link_to sub_facility.sub_number, sub_facility_path(sub_facility.id) %> <%= sub_facility.sub_name %></h4>
+            <h4><%= link_to sub_facility.sub_number%> <%= sub_facility.sub_name %></h4>
             <p class="sub-category">
               <%= sub_facility.category.category_name %>
+            </p>
+            <p class="sub-date">
+              <%= sub_facility.facility.date %>
+            </p>
+            <p class="sub-time">
+              <%= sub_facility.facility.lending_time %>
             </p>
             <p class="sub-status">
               <%= sub_facility.facility.use_status ? "使用可" : "使用不可" %>
             </p>
           </div>
+          <% end %>
         </div>
        </div>
       <% end %>

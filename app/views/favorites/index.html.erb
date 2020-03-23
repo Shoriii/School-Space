@@ -4,7 +4,7 @@
       <h2>お気に入り施設一覧</h2>
        <% @favorites.each do |favorite| %>
           <div class="facility-area">
-							<%= link_to(facility_path(@facility), class: 'list-content') do %>
+							<%= link_to(facility_path(favorite.facility), class: 'list-content') do %>
                 <%= attachment_image_tag favorite.facility.facility_image,:facility_image,:fill,280,200,format:'jpeg',fallback: "no_image.jpg" %>
                 <p>
                   <ul class="facility-heading">施設名</ul><li> <%= favorite.facility.facility_name %></li><br>

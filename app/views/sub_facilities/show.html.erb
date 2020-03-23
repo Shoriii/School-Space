@@ -29,6 +29,14 @@
             <td >カテゴリ</td>
             <td><%= @sub_facility.category.category_name %></td>
           </tr>
+          <tr>
+            <td >解放日</td>
+            <td><%= @sub_facility.facility.date %></td>
+          </tr>
+          <tr>
+            <td >解放時間</td>
+            <td><%= @sub_facility.facility.lending_time %></td>
+          </tr>
             <td>詳細内容</td>
             <td><%= @sub_facility.body %></td>
           </tr>

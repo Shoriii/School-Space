@@ -61,29 +61,3 @@ li {
   padding: 0.5em;
   transition: all 0.3s ease 0s;
 }
-//コート一覧
-.sub-facility-box {
-  margin-top: 20px;
-  width: 680px;
-  border: 3px solid #ffffff;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 4px gray;
-}
-
-.content {
-	display: flex;
-	padding: 20px;
-  box-sizing: border-box;
-  height: 200px;
-  transition: all 0.3s ease 0s;
-}
-.sub-facility-img {
-		margin-right: 20px;
-		width: 160px;
-		height: 160px;
-}
-img {
-			min-width: 150px;
-			max-width: 150%;
-			vertical-align: top;
-}

@@ -2,11 +2,15 @@
       <div class="sub-img">
         <%= attachment_image_tag facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %>
         <!--いいね-->
+        <% if customer_signed_in? %>
         <div class="facilities_<%= facility.id %>">
           <%= render 'favorites/favorite',facility: facility %>
         </div>
+        <% else %>
         <!---------->
       </div>
+      <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span>
+        <% end %>
       <h3>施設紹介</h3>
         <table class= "table">
         <tbody>
