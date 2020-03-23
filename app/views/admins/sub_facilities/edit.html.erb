@@ -35,6 +35,10 @@
             <td>詳細内容</td>
             <td><%= f.text_area :body %></td>
           </tr>
+          <tr>
+            <td>使用ステータス</td>
+            <td><%= f.select :use_status,[["使用可",true],["使用不可",false]] %></td>
+          </tr>
           </tbody>
         </table>
         <%= f.submit "変更する" ,class:"btn btn-primary next"%>

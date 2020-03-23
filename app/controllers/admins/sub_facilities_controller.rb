@@ -34,6 +34,6 @@ class Admins::SubFacilitiesController < ApplicationController
   end
   private
   def sub_facility_params
-    params.require(:sub_facility).permit(:facility_id, :category_id, :sub_name, :sub_image, :body, :sub_number)
+    params.require(:sub_facility).permit(:facility_id, :category_id, :sub_name, :sub_image, :body, :sub_number, :use_status)
   end
 end

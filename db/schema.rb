@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_031851) do
     t.string "facility_phone", null: false
     t.string "date", null: false
     t.string "lending_time", null: false
-    t.string "facility_image_id", null: false
+    t.string "facility_image_id"
     t.boolean "use_status", default: true, null: false
     t.text "introduction", null: false
     t.datetime "created_at", null: false
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_031851) do
     t.string "sub_name", null: false
     t.string "sub_image_id", null: false
     t.string "sub_number", null: false
+    t.boolean "use_status", default: true, null: false
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -32,8 +32,13 @@
             <td >カテゴリ</td>
             <td><%= f.collection_select :category_id, Category.all, :id, :category_name, include_blank: "--選択してください--" %></td>
           </tr>
+          <tr>
             <td>詳細内容</td>
             <td><%= f.text_area :body %></td>
+          </tr>
+          <tr>
+            <td>使用ステータス</td>
+            <td><%= f.select :use_status,[["使用可",'使用可'],["使用不可",'使用不可']] %></td>
           </tr>
           </tbody>
         </table>
