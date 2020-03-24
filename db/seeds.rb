@@ -106,6 +106,41 @@ Facility.create do |a|
   a.introduction = '気軽にご利用ください'
 end
 
+Facility.create do |a|
+  a.id = 4
+  a.facility_name = '○○グラウンド'
+  a.address = '東京○○区○○市○○町1-1-1'
+  a.date = '毎週日曜日'
+  a.lending_time = '10:00-16:00'
+  a.facility_phone = '11111111'
+  a.facility_image_id = ''
+  a.use_status = true
+  a.introduction = 'ボールはご自身でご用意お願いいたします'
+end
+
+Facility.create do |a|
+  a.id = 5
+  a.facility_name = '△△プール'
+  a.address = '東京△△区△△市△△町1-1-1'
+  a.date = '毎週土曜日※7,8月限定'
+  a.lending_time = '11:00-17:00'
+  a.facility_phone = '11111111'
+  a.facility_image_id = ''
+  a.use_status = true
+  a.introduction = '雨天時はご利用いただけません'
+end
+
+Facility.create do |a|
+  a.id = 6
+  a.facility_name = 'xx卓球場'
+  a.address = '東京xx区xx市xx町1-1-1'
+  a.date = '毎週火曜日'
+  a.lending_time = '18:00-22:00'
+  a.facility_phone = '11111111'
+  a.facility_image_id = ''
+  a.use_status = true
+  a.introduction = '用具はこちらで用意してあります。係員にお声掛けください。'
+end
 #コート
 SubFacility.create do |a|
   a.id = 1
@@ -146,7 +181,7 @@ SubFacility.create do |a|
 end
 SubFacility.create do |a|
   a.id = 5
-  a.category_id = 3
+  a.category_id = 6
   a.facility_id = 3
   a.sub_name = 'Aコート'
   a.sub_image_id = ''
@@ -155,9 +190,66 @@ SubFacility.create do |a|
 end
 SubFacility.create do |a|
   a.id = 6
-  a.category_id = 3
+  a.category_id = 6
   a.facility_id = 3
   a.sub_name = 'Bコート'
+  a.sub_image_id = ''
+  a.sub_number = '②'
+  a.body = '広々とご利用いただけます'
+end
+
+SubFacility.create do |a|
+  a.id = 7
+  a.category_id = 3
+  a.facility_id = 6
+  a.sub_name = 'Aコート'
+  a.sub_image_id = ''
+  a.sub_number = '①'
+  a.body = '広々とご利用いただけます'
+end
+SubFacility.create do |a|
+  a.id = 8
+  a.category_id = 3
+  a.facility_id = 6
+  a.sub_name = 'Bコート'
+  a.sub_image_id = ''
+  a.sub_number = '②'
+  a.body = '広々とご利用いただけます'
+end
+
+SubFacility.create do |a|
+  a.id = 9
+  a.category_id = 1
+  a.facility_id = 4
+  a.sub_name = 'Aコート'
+  a.sub_image_id = ''
+  a.sub_number = '①'
+  a.body = '広々とご利用いただけます'
+end
+SubFacility.create do |a|
+  a.id = 10
+  a.category_id = 1
+  a.facility_id = 4
+  a.sub_name = 'Bコート'
+  a.sub_image_id = ''
+  a.sub_number = '②'
+  a.body = '広々とご利用いただけます'
+end
+
+SubFacility.create do |a|
+  a.id = 11
+  a.category_id = 4
+  a.facility_id = 5
+  a.sub_name = '第一コース'
+  a.sub_image_id = ''
+  a.sub_number = '①'
+  a.body = '広々とご利用いただけます'
+end
+SubFacility.create do |a|
+  a.id = 12
+  a.category_id = 4
+  a.facility_id = 5
+  a.sub_name = '第二コース'
   a.sub_image_id = ''
   a.sub_number = '②'
   a.body = '広々とご利用いただけます'
