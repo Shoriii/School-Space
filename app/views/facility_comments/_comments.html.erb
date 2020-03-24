@@ -8,7 +8,7 @@
         <td><%= facility_comment.comment %></td>
       </p>
       <p class="comment-date">
-        <td><%= facility_comment.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= facility_comment.created_at.strftime("%Y年%m月%d日") %></td>
       </p>
       <div class="comment-btn">
         <% if facility_comment.customer == current_customer %>

@@ -33,8 +33,14 @@
 	background-image: url("image3.jpg");
 }
 .mv-content {
-  position: absolute; top:0; left:500px;
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
+
 .mv-title {
 	padding-top: 200px;
 	padding-bottom: 10px;
@@ -145,6 +151,7 @@
 }
 
 //アバウトページ
+//スクスペとは？
 .about-box {
 	background-color: #ffffff;
   border: 3px solid #ffffff;
@@ -153,9 +160,45 @@
 	margin-bottom:20px;
 }
 .about-box > h4 {
-	padding: 10px 0 10px 5px;
+	padding-left:5px;
+	font-size: 25px;
+	border-bottom: solid 3px skyblue;
 }
 
+h4 > i {
+	padding: 10px 10px 10px 5px;
+	font-size: 40px;
+}
 .about-text {
 	padding:10px 0;
+	font-size: 15px;
+}
+strong {
+	font-size: 20px;
+	color: #EC715F;
+}
+
+//お問い合わせ
+.contact-box {
+	background-color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+	margin-bottom:20px;
+}
+.contact-box > h4 {
+	padding-left:5px;
+	font-size: 20px;
+}
+
+.contact-box > p {
+	padding-left:5px;
+	font-size: 15px;
+}
+
+.contact-text {
+	font-size: 20px;
+	width:300px;
+	font-weight: bold;
+	border-bottom: solid 2px gray;
 }

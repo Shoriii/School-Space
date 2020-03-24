@@ -16,7 +16,7 @@ class FacilitiesController < ApplicationController
   def show
      @facility = Facility.find(params[:id])
      @facility_comment = FacilityComment.new
-     @facility_comments = @facility.facility_comments
+     @facility_comments = @facility.facility_comments.page(params[:page]).reverse_order
   end
   def calendar
       @events = Event.where(facility_id: params[:facility_id])

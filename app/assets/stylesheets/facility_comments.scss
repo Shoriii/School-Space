@@ -5,10 +5,24 @@
   background-color: #ffffff;
   border:solid 1px gray;
   margin-bottom: 10px;
+  position: relative;
 }
 .comment-btn {
-  text-align: right;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 .comment-title {
   font-weight: bold;
+  font-size: 18px;
+  padding: 5px 0 5px 10px;
+
+}
+
+.comment-text,.comment-date {
+  padding: 5px 0 5px 10px;
+}
+
+.comment-form {
+  position: relative;
 }
