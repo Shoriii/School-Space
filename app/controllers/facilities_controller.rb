@@ -1,10 +1,10 @@
 class FacilitiesController < ApplicationController
   def index
     @categories = Category.all
-  	 if into = params[:category_name]
-     @facilities = Category.find_by(category_name: params[:category_name]).facilities.page(params[:page]).reverse_order
+    #distinctで同じ施設をまとめる
+  	 if params[:category_name]
+     @facilities = Category.find_by(category_name: params[:category_name]).facilities.page(params[:page]).reverse_order.distinct
     else
-     @facilities = Facility.all
      @facilities = Facility.page(params[:page]).reverse_order
      end
   end

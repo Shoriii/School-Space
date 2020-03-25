@@ -1,14 +1,14 @@
 class Admins::FacilitiesController < ApplicationController
   def top
     @facilities = Facility.all.order("created_at DESC").limit(4)
-    @events= Event.all.order("created_at DESC").limit(4)
+    @events= Event.where(title: "予約済").limit(4)
+    @c_events= Event.where(title: "キャンセル済")
   end
   def new
     @facility = Facility.new
   end
   def index
-    @facilities = Facility.all
-    @facilities = Facility.page(params[:page]).reverse_order
+    @facilities = Facility.all.page(params[:page]).reverse_order
   end
   def create
     @facility = Facility.new(facility_params)

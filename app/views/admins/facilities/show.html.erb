@@ -12,12 +12,12 @@
         <div class="sidebar-title"><%= link_to 'カレンダー', admins_facilities_calendar_path(@facility.id) %></div>
         </div>
         <%= link_to '編集する', edit_admins_facility_path, class: 'btn btn-primary', style:"width:100%;"%>
-      </div>
-      <div class= "col-xs-9">
-      <h3>施設画像</h3>
-      <div class="sub-img"><%= attachment_image_tag @facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %></div>
-      <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span>
-      <h3>施設紹介</h3>
+        </div>
+        <div class= "col-xs-9">
+        <h3>施設画像</h3>
+        <div class="sub-img"><%= attachment_image_tag @facility,:facility_image,:fill,680,400,format:'jpeg',fallback: "no_image.jpg" %>
+        <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span></div>
+        <h3>施設紹介</h3>
         <table class= "table">
         <tbody>
           <tr>

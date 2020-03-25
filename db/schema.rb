@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_031851) do
     t.integer "category_id", null: false
     t.integer "facility_id", null: false
     t.string "sub_name", null: false
-    t.string "sub_image_id", null: false
+    t.string "sub_image_id"
     t.string "sub_number", null: false
     t.boolean "use_status", default: true, null: false
     t.text "body", null: false

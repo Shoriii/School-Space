@@ -13,9 +13,9 @@ class Admins::SubFacilitiesController < ApplicationController
   def index
     @facility = SubFacility.where(facility_id: params[:facility_id])
     if params[:facility_id]
-      @sub_facilities = SubFacility.where(facility_id: params[:facility_id])
+      @sub_facilities = SubFacility.where(facility_id: params[:facility_id]).page(params[:page]).reverse_order
     else
-      @sub_facilities = SubFacility.order(created_at: :desc).all
+      @sub_facilities = SubFacility.all.page(params[:page]).reverse_order
     end
   end
   def show

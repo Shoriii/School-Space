@@ -6,7 +6,7 @@
   </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="event-heading">予約者情報</div>
+        <h3>予約者情報</h3>
           <table class="table">
             <tr>
               <td>予約者氏名（姓）</td>
@@ -35,7 +35,7 @@
           </table>
       </div>
       <div class="col-xs-6">
-        <div class="event-heading">予約内容</div>
+        <h3>予約内容</h3>
           <table class="table">
             <tr>
               <td>予約状況</td>
@@ -63,10 +63,11 @@
             </tr>
           </table>
       </div>
-        <label>予約状況</label>
+      	<% if @event.title == "予約済" %>
         <%= form_for(@event) do |f| %>
-        <%= f.select :title,[["予約済",'予約済'],["キャンセル",'キャンセル済']] %>
-        <%= f.submit "キャンセルする" ,"data-confirm" => "本当にキャンセルしますか？",class:"btn btn-danger"%>
+        <%= f.hidden_field :title, :value => "キャンセル済" %>
+        <%= f.submit "キャンセルする" ,"data-confirm" => "本当にキャンセルしますか？",class:"btn btn-danger" %>
+        <% end %>
         <% end %>
     </div>
 </div>

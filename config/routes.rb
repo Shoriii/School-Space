@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :events do
     collection do
         get 'thanks'
+        get 'cancel'
         get  'confirm'
         post 'confirm'
     end

@@ -1,14 +1,9 @@
  <div class="container">
   <div class= "row">
     <div class= "col-xs-12">
-      <h2>詳細画面</h2>
+      <h2>カレンダー</h2>
     </div>
   </div>
-    <div class= "row">
-      <div class= "col-xs-12">
-      <div class="sub-img"><%#= attachment_image_tag @facility,:facility_image,:fill,1140,380,format:'jpeg' %><%#= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%></div>
-      </div>
-    </div>
   <div class="row">
     <div class= "col-xs-2">
       <div class="sidebar">
@@ -22,7 +17,6 @@
         <%= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%>
       </div>
       <div class="col-xs-10">
-        <h2>カレンダー</h2>
           <p class="note">※「予約済」の場合は<span class="under-bule">青色</span>、「キャンセル済」の場合は<span class="under-red">赤色</span>で表示されます。</p>
         <div id="calendar"></div>
       </div>

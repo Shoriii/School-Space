@@ -30,4 +30,9 @@ class Customer < ApplicationRecord
   has_many :facilities,  through: :events
   has_many :favorites
   has_many :facility_comments
+
+  # ユーザーのアカウントが有効であることを確認
+  def active_for_authentication?
+    super && member_status
+  end
 end

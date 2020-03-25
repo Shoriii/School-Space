@@ -51,11 +51,11 @@
           </tr>
           <tr>
             <td>予約開始時間</td>
-            <td><%= @event.start_at.strftime("%Y年%m月%日 %H:%M") %></td>
+            <td><%= @event.start_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           </tr>
           <tr>
             <td>予約終了時間</td>
-            <td><%= @event.end_at.strftime("%Y年%m月%日 %H:%M") %></td>
+            <td><%= @event.end_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           </tr>
           <tr>
             <td>ご利用人数</td>
@@ -63,7 +63,6 @@
           </tr>
         </table>
     </div>
-    <label>予約状況</label>
-        <%= link_to "削除する" ,admins_event_path,method: :delete,"data-confirm" => "本当に削除しますか？",class:"btn btn-danger"%>
+        <%= link_to "削除する" ,admins_event_path,method: :delete,"data-confirm" => "本当に削除しますか？",class:"btn btn-danger", style:"width:25%;"%>
   </div>
 </div>

@@ -26,6 +26,29 @@
     </div>
     <div class="col-xs-6">
       <div class="top-box">
+        <h3>キャンセルされた施設</h3>
+        <table class="table">
+          <tr class="border">
+            <th>キャンセル日</th>
+            <th>施設名</th>
+            <th>予約者名</th>
+          </tr>
+          <tbody>
+            <% @c_events.each do |event| %>
+            <tr>
+              <td><%= link_to event.updated_at.strftime("%Y年%m月%d日"),admins_event_path(event) %></td>
+              <td><%= event.facility.facility_name %></td>
+              <td><%= event.customer.last_name %><%= event.customer.first_name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-6">
+      <div class="top-box">
         <h3>最近予約された施設</h3>
         <table class="table">
           <tr class="border">
@@ -36,7 +59,7 @@
           <tbody>
             <% @events.each do |event| %>
             <tr>
-              <td><%= event.created_at.strftime("%Y-%m-%d") %></td>
+              <td><%= link_to event.created_at.strftime("%Y年%m月%d日"),admins_event_path(event) %></td>
               <td><%= event.facility.facility_name %></td>
               <td><%= event.customer.last_name %><%= event.customer.first_name %></td>
             </tr>
@@ -45,5 +68,5 @@
         </table>
       </div>
     </div>
-  </div>
+    </div>
 </div>

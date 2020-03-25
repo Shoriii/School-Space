@@ -10,20 +10,24 @@
           <tr class="border">
             <th>施設ID</th>
             <th>施設</th>
-            <th>カテゴリ</th>
+            <th>コート数</th>
             <th>ステータス</th>
           </tr>
       <tbody>
         <% @facilities.each do |facility| %>
-        <tr>
+        <tr class="admins_table">
           <%= link_to(admins_facility_path(facility.id), class: 'list-content') do %>
           <td><%= facility.id %></td>
           <td><%= link_to facility.facility_name,admins_facility_path(facility.id) %></td>
-          <td><%#= facility.category.category_name %></td>
-          <td><%= facility.use_status ? "使用可" : "使用不可" %></td>
+          <td><%= facility.sub_facilities.count %></td>
+          <% if  facility.use_status == true %>
+          <td><%= link_to '使用可', admins_facility_path(facility), class:'btn btn-success'%></td>
+          <% else  facility.use_status == false %>
+          <td><%= link_to '使用不可', admins_facility_path(facility), class:'btn btn-danger'%></td>
           <% end %>
           <% end %>
         </tr>
+        <% end %>
       </tbody>
         </table>
     </div>

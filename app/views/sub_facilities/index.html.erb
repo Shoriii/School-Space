@@ -1,14 +1,9 @@
 <div class ="container">
   <div class= "row">
     <div class= "col-xs-12">
-      <h2>詳細画面</h2>
+      <h2>コート一覧</h2>
     </div>
   </div>
-    <div class= "row">
-      <div class= "col-xs-12">
-      <div class="sub-img"></div>
-      </div>
-    </div>
     <div class="row">
       <div class= "col-xs-3">
         <div class="sidebar">
@@ -23,6 +18,7 @@
         </div>
       <div class="col-xs-9">
       <% @sub_facilities.each do |sub_facility| %>
+      <% %>
        <div class="sub-facility-box clearfix">
         <div class="content">
         <%= link_to(sub_facility_path(sub_facility) , class: 'list-content') do %>

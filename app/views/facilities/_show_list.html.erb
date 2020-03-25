@@ -1,6 +1,6 @@
 <h3>施設画像</h3>
       <div class="sub-img">
-        <%= attachment_image_tag facility,:facility_image,:fill,680,380,format:'jpeg',fallback: "no_image.jpg" %>
+        <%= attachment_image_tag facility,:facility_image,:fill,680,400,format:'jpeg',fallback: "no_image.jpg" %>
         <!--いいね-->
         <% if customer_signed_in? %>
         <div class="facilities_<%= facility.id %>">
@@ -8,9 +8,9 @@
         </div>
         <% else %>
         <!---------->
-      </div>
       <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span>
         <% end %>
+        </div>
       <h3>施設紹介</h3>
         <table class= "table">
         <tbody>

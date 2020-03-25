@@ -1,14 +1,29 @@
-<div class= "container">
+<% if @facilities %>
+ <div class= "container">
     <div class= "row">
       <div class="facilities-box">
-      <h2>施設一覧</h2>
-      <% if @facilities %>
-       <%= render 'facility_list', facilities: @facilities %>
-       <%= paginate @facilities, class: "paginate" %>
-       <% else @q_facilities %>
-       <%= render 'facility_list', facilities: @q_facilities %>
-       <%= paginate @q_facilities, class: "paginate" %>
-       <% end %>
+        <h2>施設一覧</h2>
+        <%= render 'facility_list', facilities: @facilities %>
       </div>
     </div>
-</div>
+    <%= paginate @facilities, class: "paginate" %>
+ </div>
+
+<% else @q_facilities %>
+  <div class= "container">
+    <div class= "row">
+      <div class="facilities-box">
+        <h2>施設一覧</h2>
+          <%= render 'facility_list', facilities: @q_facilities %>
+      </div>
+    </div>
+      <%= paginate @q_facilities, class: "paginate" %>
+ </div>
+<% end %>
+
+
+
+
+
+
+
