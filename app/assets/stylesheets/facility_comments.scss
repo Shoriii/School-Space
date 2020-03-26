@@ -26,3 +26,8 @@
 .comment-form {
   position: relative;
 }
+//星評価
+#star > img, .star > img {
+  height: 20px;
+  min-width:20px;
+}

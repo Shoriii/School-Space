@@ -1,7 +1,9 @@
 <% facility_comments.each do |facility_comment| %>
+  <!--星評価-->
   <div id="facility_comment-<%= facility_comment.id %>">
     <div id="comments">
       <div class="comment-title">
+       <div id="star-rate-<%= facility_comment.id %>" class="star", style="text-align:right;">評価：<%= facility_comment.rate%>点</div>
         <td>スクスペユーザー</td>
       </div>
       <p class="comment-text">
@@ -17,4 +19,17 @@
       </div>
     </div>
 </div>
+    <script>
+      $('#star-rate-<%= facility_comment.id %>').raty({
+        size: 36,
+        width: 30,
+        height:30,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= facility_comment.rate %>,
+      });
+      </script>
 <% end %>

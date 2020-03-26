@@ -19,6 +19,12 @@
        <h3>コメント投稿</h3>
       <div class="comment-form">
       <%= form_with model: [@facility, @facility_comment], data:{ remote: true } do |f| %>
+       <!-- 評価 -->
+        <div class="form-group" id="star">
+          <%= f.label :rate,'評価 ' %>
+          <%= f.hidden_field :rate, id: :facility_comment_star %>
+        </div>
+      <!-- コメント -->
         <%= f.text_area :comment, style:'width:100%;height:100px;' %>
         <div class="comment-btn">
         <%= f.submit '送信', class:'btn btn-primary' %>
@@ -29,3 +35,14 @@
     </div>
   </div>
 </div>
+<!-- 評価javascript -->
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'facility_comment[rate]',
+    half: true,
+  });
+  </script>  

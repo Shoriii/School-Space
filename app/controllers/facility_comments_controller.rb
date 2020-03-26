@@ -26,6 +26,6 @@ class FacilityCommentsController < ApplicationController
   private
 
   def facility_comment_params
-    params.require(:facility_comment).permit(:comment)
+    params.require(:facility_comment).permit(:comment, :rate)
   end
 end

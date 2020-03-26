@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_031851) do
     t.integer "customer_id"
     t.integer "facility_id"
     t.string "comment"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
