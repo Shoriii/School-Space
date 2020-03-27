@@ -1,0 +1,33 @@
+// Place all the styles related to the facility_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#comments {
+  background-color: #ffffff;
+  border:solid 1px gray;
+  margin-bottom: 10px;
+  position: relative;
+}
+.comment-btn {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.comment-title {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 0 5px 10px;
+
+}
+
+.comment-text,.comment-date {
+  padding: 5px 0 5px 10px;
+}
+
+.comment-form {
+  position: relative;
+}
+//星評価
+#star > img, .star > img {
+  height: 20px;
+  min-width:20px;
+}

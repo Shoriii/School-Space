@@ -1,14 +1,9 @@
  <div class="container">
   <div class= "row">
     <div class= "col-xs-12">
-      <h2>詳細画面</h2>
+      <h2>カレンダー</h2>
     </div>
   </div>
-    <div class= "row">
-      <div class= "col-xs-12">
-      <div class="sub-img"><%#= attachment_image_tag @facility,:facility_image,:fill,1140,380,format:'jpeg' %><%#= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%></div>
-      </div>
-    </div>
   <div class="row">
     <div class= "col-xs-2">
       <div class="sidebar">
@@ -22,58 +17,9 @@
         <%= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%>
       </div>
       <div class="col-xs-10">
-        <h2>カレンダー</h2>
           <p class="note">※「予約済」の場合は<span class="under-bule">青色</span>、「キャンセル済」の場合は<span class="under-red">赤色</span>で表示されます。</p>
         <div id="calendar"></div>
       </div>
   </div>
 </div>
-<script>
-$('#calendar').fullCalendar({
-  events: [
-    <% @events.each do |event| %>
-    {
-
-      title:'<%= event.number %> <%= event.title %>',
-      start:'<%= event.start_at.strftime("%Y-%m-%d %H:%M") %>',
-      end: '<%= event.end_at.strftime("%Y-%m-%d %H:%M") %>'
-    },
-    <% end %>
-  ],
-  //カレンダー上部を年月で表示
-  titleFormat: 'YYYY年 M月',
-  //曜日
-  dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
-  //ボタン
-  header: {
-      left: 'title',
-      center: '',
-      right: 'today prev,next'
-  },
-  //終了時刻がないイベントの表示間隔
-  defaultTimedEventDuration: '03:00:00',
-  buttonText: {
-      prev: '前',
-      next: '次',
-      prevYear: '前年',
-      nextYear: '翌年',
-      today: '今日',
-      month: '月',
-      week: '週',
-      day: '日'
-  },
-  // Drag & Drop & Resize
-  editable: true,
-  // 時間の書式
-  defaultView: 'month',
-  displayEventTime: true,
-  displayEventEnd: true,
-  timeFormat: "HH:mm",
-  //イベントの文字色
-  eventTextColor: '#ffffff',
-});
-//イベントタイトルに応じて色を変更
- $(".fc-content:contains('予約済')").css("background-color","#4169e1");
- $(".fc-content:contains('キャンセル済')").css("background-color","#dc143c");
-</script>
-fc-day-grid-event 
+    <%= render 'calendar_list' %>

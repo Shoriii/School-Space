@@ -1,5 +1,6 @@
 class Admins::EventsController < ApplicationController
   def index
+    @customer = current_customer
     @events = Event.all
     @events = Event.page(params[:page]).reverse_order
   end
@@ -16,6 +17,15 @@ class Admins::EventsController < ApplicationController
        redirect_to events_path
     else
       render 'show'
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+       redirect_to admins_events_path
+    else
+    	 render action: :destroy
     end
   end
   private

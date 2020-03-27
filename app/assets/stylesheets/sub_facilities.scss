@@ -1,3 +1,38 @@
 // Place all the styles related to the sub_facilities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//コート一覧
+.sub-facility-box {
+  margin-top: 20px;
+  width: 680px;
+  border: 3px solid #ffffff;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.content {
+	display: flex;
+	padding: 20px;
+  box-sizing: border-box;
+  height: 200px;
+  transition: all 0.3s ease 0s;
+}
+.sub-facility-img {
+		margin-right: 20px;
+		width: 160px;
+		height: 160px;
+}
+img {
+			min-width: 150px;
+			max-width: 150%;
+			vertical-align: top;
+}
+
+.sub-status {
+  width:50px;
+  text-align: center;
+  background-color: skyblue;
+  border-radius: 15px 15px;
+  box-shadow: 1px 1px 2px gray;
+}

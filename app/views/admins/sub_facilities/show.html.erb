@@ -32,6 +32,10 @@
             <td>詳細内容</td>
             <td><%= @sub_facility.body %></td>
           </tr>
+          <tr>
+            <td>使用ステータス</td>
+            <td><%= @sub_facility.use_status ? "使用可" : "使用不可" %></td>
+          </tr>
           </tbody>
         </table>
         <%= link_to "編集する" , edit_admins_sub_facility_path(@sub_facility.id),class:"btn btn-primary next"%>

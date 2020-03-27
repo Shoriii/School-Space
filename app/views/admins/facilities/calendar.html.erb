@@ -1,0 +1,24 @@
+ <div class="container">
+  <div class= "row">
+    <div class= "col-xs-12">
+      <h2>カレンダー</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class= "col-xs-2">
+      <div class="sidebar">
+        <div class="sidebar-title"><%= link_to '基本情報', "./" %></div>
+        <div class="sidebar-title">
+          <%= link_to 'コート一覧', admins_sub_facility_facilities_path %>
+        </div>
+        <div class="sidebar-title">
+          <%= link_to 'カレンダー', admins_facilities_calendar_path%></div>
+        </div>
+      </div>
+      <div class="col-xs-10">
+          <p class="note">※「予約済」の場合は<span class="under-bule">青色</span>、「キャンセル済」の場合は<span class="under-red">赤色</span>で表示されます。</p>
+        <div id="calendar"></div>
+      </div>
+  </div>
+</div>
+<%= render 'facilities/calendar_list' %>

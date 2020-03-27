@@ -7,9 +7,38 @@
 	height: 650px;
 	width: 100%;
 	text-align: center;
+}
+#container{
+  height: 650px;
+  position: relative;
+}
+
+#screen {
+  background-color: #000000;
+}
+#screen .image1,#screen .image2,#screen .image3,#screen .image4 {
+  display: block;
+  opacity: 0.7;
+}
+.image1 {
+	background-image: url("image2.jpg");
+}
+.image2 {
 	background-image: url("TSU89_goal_TP_V.jpg");
-	background-position: center;
-	background-size: cover;
+}
+.image3 {
+	background-image: url("image4.jpg");
+}
+.image4 {
+	background-image: url("image3.jpg");
+}
+.mv-content {
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .mv-title {
@@ -120,3 +149,57 @@
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-0.1875em);
 }
+
+//アバウトページ
+//スクスペとは？
+.about-box {
+	background-color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+	margin-bottom:20px;
+}
+.about-box > h4 {
+	padding-left:5px;
+	font-size: 25px;
+	border-bottom: solid 3px skyblue;
+}
+
+h4 > i {
+	padding: 10px 10px 10px 5px;
+	font-size: 40px;
+}
+.about-text {
+	padding:10px 0;
+	font-size: 15px;
+}
+strong {
+	font-size: 20px;
+	color: #EC715F;
+}
+
+//お問い合わせ
+.contact-box {
+	background-color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 2px 2px 4px gray;
+	transition: all 0.3s ease 0s;
+	margin-bottom:20px;
+}
+.contact-box > h4 {
+	padding-left:5px;
+	font-size: 20px;
+}
+
+.contact-box > p {
+	padding-left:5px;
+	font-size: 15px;
+}
+
+.contact-text {
+	font-size: 20px;
+	width:300px;
+	font-weight: bold;
+	border-bottom: solid 2px gray;
+}
+

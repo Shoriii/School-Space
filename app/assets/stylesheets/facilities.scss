@@ -10,26 +10,31 @@
   background-color: #ffffff;
   border: 3px solid #ffffff;
   box-shadow: 2px 2px 4px gray;
-	transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
 }
 
+.facility-area img {
+  height:200px;
+}
+.facility-area span {
+  position: absolute;
+  top:150px;
+  right:5px;
+  bottom:290px;
+}
 .facility-area:hover,.sidebar-title:hover,.content:hover {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-0.1875em);
 }
 
-.clearfix >.facility-area:nth-child(3),.facility-area:nth-child(6) {
-  margin-right: 0;
-}
-
-
 .facility-heading {
   color: black;
-  border-left: solid 8px orange;/*左側の線*/
-  background: whitesmoke;/*背景色*/
-  margin-bottom: 5px;/*下のバーとの余白*/
+  border-left: solid 8px orange;
+  background: whitesmoke;
+  margin-bottom: 5px;
   line-height: 1.5;
-  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  border-radius: 0 15px 15px 0;
   padding: 0.5em;
 }
 li {
@@ -41,12 +46,23 @@ li {
 .table {
   background-color: #ffffff;
 }
-
-.img {
-  height:316px;
-  width:400px;
+.sub-img {
+  position: relative;
+  height:400px;
+  width:680px;
   box-shadow: 2px 2px 4px gray;
 }
+.sub-img img {
+  height:400px;
+  width:680px;
+}
+.sub-img span {
+  position: absolute;
+  top:350px;
+  right:10px;
+  bottom:20px;
+}
+
 .sidebar {
   margin-top: 20px;
 }
@@ -61,29 +77,27 @@ li {
   padding: 0.5em;
   transition: all 0.3s ease 0s;
 }
-//コート一覧
-.sub-facility-box {
-  margin-top: 20px;
-  width: 680px;
-  border: 3px solid #ffffff;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 4px gray;
+//新規登録ボタン
+#fab {
+  display: block;
+  width: 45px;
+  height: 45px;
+  float:right;
+  background: #03a9f4;
+  text-align: center;
+  border-radius: 50%;
+  transition: .3s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+  margin-bottom: 5px;
 }
 
-.content {
-	display: flex;
-	padding: 20px;
-  box-sizing: border-box;
-  height: 200px;
-  transition: all 0.3s ease 0s;
+#fab:hover {
+box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
-.sub-facility-img {
-		margin-right: 20px;
-		width: 160px;
-		height: 160px;
-}
-img {
-			min-width: 150px;
-			max-width: 150%;
-			vertical-align: top;
+
+#fab i {
+color: white;
+line-height: 30px;
+font-size: 18px;
+padding-left: 0;
 }

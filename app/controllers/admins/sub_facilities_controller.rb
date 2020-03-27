@@ -11,7 +11,12 @@ class Admins::SubFacilitiesController < ApplicationController
     end
   end
   def index
-    @sub_facilities = SubFacility.all
+    @facility = SubFacility.where(facility_id: params[:facility_id])
+    if params[:facility_id]
+      @sub_facilities = SubFacility.where(facility_id: params[:facility_id]).page(params[:page]).reverse_order
+    else
+      @sub_facilities = SubFacility.all.page(params[:page]).reverse_order
+    end
   end
   def show
     @sub_facility = SubFacility.find(params[:id])
@@ -29,6 +34,6 @@ class Admins::SubFacilitiesController < ApplicationController
   end
   private
   def sub_facility_params
-    params.require(:sub_facility).permit(:facility_id, :category_id, :sub_name, :sub_image, :body, :sub_number)
+    params.require(:sub_facility).permit(:facility_id, :category_id, :sub_name, :sub_image, :body, :sub_number, :use_status)
   end
 end

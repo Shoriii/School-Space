@@ -1,0 +1,21 @@
+// Place all the styles related to the favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//いいね
+#favorite {
+  text-align: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #FAFAFA;
+  color: rgb(238,98,103);
+  line-height: 1.5;
+  width:60px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+span:hover {
+box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+transform: translateY(-0.1875em);
+}

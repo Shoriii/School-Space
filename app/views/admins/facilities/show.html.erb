@@ -4,20 +4,27 @@
       <h2>詳細画面</h2>
     </div>
   </div>
-    <div class= "row">
-      <div class= "col-xs-7">
-      <h3>施設画像</h3>
-      <div class="img"><%= attachment_image_tag @facility,:facility_image,:fill,400,316,format:'jpeg',fallback: "no_image.jpg" %></div>
-      </div>
-      <div class= "col-xs-5">
-      <h3>施設紹介</h3>
+    <div class="row">
+      <div class= "col-xs-3">
+        <div class="sidebar">
+        <div class="sidebar-title"><%= link_to '基本情報', admins_facility_path(@facility.id) %></div>
+        <div class="sidebar-title"><%= link_to 'コート一覧', admins_sub_facility_facilities_path(@facility.id) %></div>
+        <div class="sidebar-title"><%= link_to 'カレンダー', admins_facilities_calendar_path(@facility.id) %></div>
+        </div>
+        <%= link_to '編集する', edit_admins_facility_path, class: 'btn btn-primary', style:"width:100%;"%>
+        </div>
+        <div class= "col-xs-9">
+        <h3>施設画像</h3>
+        <div class="sub-img"><%= attachment_image_tag @facility,:facility_image,:fill,680,400,format:'jpeg',fallback: "no_image.jpg" %>
+        <span id="favorite" class="glyphicon glyphicon-heart-empty"><%= @facility.favorites.count %></span></div>
+        <h3>施設紹介</h3>
         <table class= "table">
         <tbody>
           <tr>
             <td>施設名</td>
-            <td><%=  @facility.facility_name %></td>
+            <td><%= @facility.facility_name %></td>
           </tr>
-          <tr>
+
             <td>住所</td>
             <td><%= @facility.address %></td>
           </tr>
@@ -37,15 +44,13 @@
             <td>紹介文</td>
             <td><%= @facility.introduction %></td>
           </tr>
-          <tr>
-            <td>使用ステータス</td>
-            <td><%= @facility.use_status ? "使用可": "使用不可" %></td>
-          </tr>
           </tbody>
-
-        </table>
-        <%= link_to '編集する', edit_admins_facility_path(@facility.id) ,class:"btn btn-primary", style:"width:50%;"%>
+      </table>
+      <!--コメント-->
+      <h3>コメント一覧</h3>
+      <div id="js-comment">
+      <%= render 'facility_comments/comments', facility_comments: @facility_comments %>
       </div>
     </div>
-    <%= render 'facilities/calendar' %>
+  </div>
 </div>

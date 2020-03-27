@@ -1,0 +1,35 @@
+<% facility_comments.each do |facility_comment| %>
+  <!--星評価-->
+  <div id="facility_comment-<%= facility_comment.id %>">
+    <div id="comments">
+      <div class="comment-title">
+       <div id="star-rate-<%= facility_comment.id %>" class="star", style="text-align:right;">評価：<%= facility_comment.rate%>点</div>
+        <td>スクスペユーザー</td>
+      </div>
+      <p class="comment-text">
+        <td><%= facility_comment.comment %></td>
+      </p>
+      <p class="comment-date">
+        <td><%= facility_comment.created_at.strftime("%Y年%m月%d日") %></td>
+      </p>
+      <div class="comment-btn">
+        <% if facility_comment.customer == current_customer %>
+          <td><%= link_to 'Destroy', facility_facility_comments_path(facility_comment), class: 'btn btn-danger', method: :delete, remote: true %></td>
+        <% end %>
+      </div>
+    </div>
+</div>
+    <script>
+      $('#star-rate-<%= facility_comment.id %>').raty({
+        size: 36,
+        width: 30,
+        height:30,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= facility_comment.rate %>,
+      });
+      </script>
+<% end %>

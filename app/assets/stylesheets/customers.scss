@@ -26,7 +26,7 @@ i {
   list-style: none;
   padding-bottom: 10px;;
   margin-left: 100px;
-  font-style: 30px;
+  font-size: 20px;
 }
 
 label {
@@ -37,4 +37,18 @@ label {
 
 .error_message {
   color: red;
+}
+
+//退会ページ
+
+.withdraw-title {
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.withdraw-message {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
 }

@@ -28,4 +28,11 @@ class Customer < ApplicationRecord
     end
   has_many :events, dependent: :destroy
   has_many :facilities,  through: :events
+  has_many :favorites
+  has_many :facility_comments
+
+  # ユーザーのアカウントが有効であることを確認
+  def active_for_authentication?
+    super && member_status
+  end
 end

@@ -11,15 +11,11 @@
 		<tbody>
 			<% @events.each do |event| %>
 			<tr>
-				<td><%= event.start_at.strftime("%Y-%m-%d") %></td>
-				<td><%= event.customer.last_name %><%= event.customer.first_name %></td>
+				<td><%= event.start_at.strftime("%Y年%m月%d日") %></td>
+				<td><%= event.customer.last_name %><%= event.customer.first_name %> 様</td>
 				<td><%= event.people %></td>
 				<td><%= event.title %></td>
-				<% if event.title == "予約済" %>
 				<td><%= link_to '表示する', event_path(event.id), class:'btn btn-primary' %></td>
-				<% else %>
-				<td>キャンセル済です</td>
-				<% end %>
 			</tr>
 			<% end %>
 		</tbody>

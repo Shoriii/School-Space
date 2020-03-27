@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_084813) do
+ActiveRecord::Schema.define(version: 2020_03_21_031851) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -69,9 +69,25 @@ ActiveRecord::Schema.define(version: 2020_03_17_084813) do
     t.string "facility_phone", null: false
     t.string "date", null: false
     t.string "lending_time", null: false
-    t.string "facility_image_id", null: false
+    t.string "facility_image_id"
     t.boolean "use_status", default: true, null: false
     t.text "introduction", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "facility_comments", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "facility_id"
+    t.string "comment"
+    t.float "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,8 +96,9 @@ ActiveRecord::Schema.define(version: 2020_03_17_084813) do
     t.integer "category_id", null: false
     t.integer "facility_id", null: false
     t.string "sub_name", null: false
-    t.string "sub_image_id", null: false
+    t.string "sub_image_id"
     t.string "sub_number", null: false
+    t.boolean "use_status", default: true, null: false
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

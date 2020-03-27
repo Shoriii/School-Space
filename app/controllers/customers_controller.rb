@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   before_action :authenticate_customer!
   def show
     @customer = current_customer
+    @facility = Favorite.where(facility_id: params[:facility_id])
   end
   def edit
     @customer = current_customer

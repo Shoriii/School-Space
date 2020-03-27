@@ -1,53 +1,61 @@
   <!-- メインビジュアル -->
   <section id="mv">
-    <div class="container">
+    <div id="container">
+    <div id="screen">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+      </div>
+      <div class="mv-content">
       <h1 class="mv-title">School-Space</h1>
-      <h4 class="mv-subtitle">スクスペ</h4>
-      <p class="mv-text">誰でも、気軽に、簡単に、施設を予約できます。</p>
+      <h4 class="mv-subtitle">-スクスペ-</h4>
+      <p class="mv-text">誰でも、気軽に、簡単に、学校施設を予約できます。</p>
       <div class="btn-wrapper">
         <% if customer_signed_in? %>
           <div class="btn-top">
-            <p><%=link_to "施設を予約する", facilities_path, class: "btn btn-danger center-block", style:"width:50%;" %></p>
+            <p><%=link_to "施設を予約する", facilities_path, class: "btn btn-danger center-block", style:"width:25%;" %></p>
           </div>
           <% else %>
           <div class="btn-top">
-            <p><%=link_to "ログイン", new_customer_session_path, class: "btn btn-info center-block", style:"width:50%;" %></p>
-            <p><%=link_to "新規会員登録", new_customer_registration_path, class: "btn btn-warning center-block", style:"width:50%;" %></p>
+            <p><%=link_to "ログイン", new_customer_session_path, class: "btn btn-info center-block", style:"width:25%;" %></p>
+            <p><%=link_to "新規会員登録", new_customer_registration_path, class: "btn btn-warning center-block", style:"width:25%;" %></p>
           </div>
         <% end %>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- カテゴリ -->
   <section id="category">
     <div class="container">
       <h2>全てのカテゴリ</h2>
-      <div class="category-box clearfix">
-        <div class="category box1"><a href="/facilities?category_name=バスケットボール">
+      <a class="category-box clearfix">
+        <a class="category box1" href="/facilities?category_name=バスケットボール">
         <p class="box-title">バスケットボール</p>
         </a>
-        </div>
-        <div class="category box2"><a href="/facilities?category_name=テニス">
+        </a>
+        <a class="category box2" href="/facilities?category_name=テニス">
         <p class="box-title">テニス</p>
         </a>
-        </div>
-        <div class="category box3"><a href="/facilities?category_name=卓球">
+        </a>
+        <a class="category box3" href="/facilities?category_name=卓球">
         <p class="box-title">卓球</p>
         </a>
-        </div>
-        <div class="category box4"><a href="/facilities?category_name=水泳">
+        </a>
+        <a class="category box4" href="/facilities?category_name=水泳">
         <p class="box-title">水泳</p>
         </a>
-        </div>
-        <div class="category box5"><a href="/facilities?category_name=バレーボール">
+        </a>
+        <a class="category box5" href="/facilities?category_name=バレーボール">
         <p class="box-title">バレーボール</p>
         </a>
-        </div>
-        <div class="category box6"><a href="/facilities?category_name=バドミントン">
+        </a>
+        <a class="category box6" href="/facilities?category_name=バドミントン">
         <p class="box-title">バドミントン</p>
         </a>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -59,15 +67,30 @@
       <div class="facilities-box clearfix">
         <% @events.each do |event| %>
           <div class="facility-area">
-							<%= link_to(facility_path(event.facility), class: 'list-content') do %>
-                <%= attachment_image_tag event.facility,:facility_image,:fill,294,250,format:'jpeg',fallback: "no_image.jpg" %>
+          <div class="facility-img">
+            <%= link_to(facility_path(event.facility), class: 'list-content') do %>
+              <%= attachment_image_tag event.facility,:facility_image,:fill,340,250,format:'jpeg',fallback: "no_image.jpg" %><span id="favorite" class="glyphicon glyphicon-heart-empty"><%= event.facility.favorites.count %></span>
+          </div>
                 <p>
-                  <ul class="facility-heading">施設名</ul><li> <%= event.facility.facility_name %></li><br>
-                  <ul class="facility-heading">解放日</ul><li> <%= event.facility.date%></li><br>
-                  <ul class="facility-heading">解放時間</ul><li> <%= event.facility.lending_time  %></li>
+                  <ul class="facility-heading">評価</ul><li> <div id="event-star-rate-<%= event.facility.id %>" class="star">コメント：<%= event.facility.facility_comments.count%>件</div></li><br>
+            <ul class="facility-heading">施設名</ul><li> <%= event.facility.facility_name %></li><br>
+            <ul class="facility-heading">解放日・時間</ul><li> <%= event.facility.date%>/ <%= event.facility.lending_time  %></li><br>
                 </p>
 				     <%end%>
             </div>
+                     <script>
+      $('#event-star-rate-<%= event.facility.id %>').raty({
+        size: 36,
+        width: 30,
+        height:30,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+         score: '<%= event.facility.facility_comments.average(:rate).to_f.round(1) %>',
+      });
+      </script>
 					<% end %>
       </div>
     </div>
@@ -79,16 +102,56 @@
       <div class="facilities-box clearfix">
         <% @facilities.each do |facility| %>
           <div class="facility-area">
-							<%= link_to(facility_path(facility), class: 'list-content') do %>
-                <%= attachment_image_tag facility,:facility_image,:fill,294,250,format:'jpeg',fallback: "no_image.jpg" %>
+            <%= link_to(facility_path(facility), class: 'list-content') do %>
+              <%= attachment_image_tag facility,:facility_image,:fill,340,250,format:'jpeg',fallback: "no_image.jpg" %><span id="favorite" class="glyphicon glyphicon-heart-empty"><%= facility.favorites.count %></span>
                 <p>
-                  <ul class="facility-heading">施設名</ul><li> <%= facility.facility_name %></li><br>
-                  <ul class="facility-heading">解放日</ul><li> <%= facility.date%></li><br>
-                  <ul class="facility-heading">解放時間</ul><li> <%= facility.lending_time  %></li>
+                 <ul class="facility-heading">評価</ul><li><div id="star-rate-<%= facility.id %>" class="star">コメント：<%= facility.facility_comments.count%>件</div></li><br>
+            <ul class="facility-heading">施設名</ul><li> <%= facility.facility_name %></li><br>
+            <ul class="facility-heading">解放日・時間</ul><li> <%= facility.date%>/ <%= facility.lending_time  %></li><br>
                 </p>
 				     <%end%>
             </div>
+                     <script>
+      $('#star-rate-<%= facility.id %>').raty({
+        size: 36,
+        width: 30,
+        height:30,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+         score: '<%= facility.facility_comments.average(:rate).to_f.round(1) %>',
+      });
+      </script>
 					<% end %>
       </div>
     </div>
   </section>
+  <script>
+  $(function () {
+  $("#screen").skippr({
+      // スライドショーの変化 ("fade" or "slide")
+      transition : 'slide',
+      // 変化に係る時間(ミリ秒)
+      speed : 5000,
+      // easingの種類
+      easing : 'easeOutQuart',
+      // ナビゲーションの形("block" or "bubble")
+      navType : 'block',
+      // 子要素の種類("div" or "img")
+      childrenElementType : 'div',
+      // ナビゲーション矢印の表示(trueで表示)
+      arrows : false,
+      // スライドショーの自動再生(falseで自動再生なし)
+      autoPlay : true,
+      // 自動再生時のスライド切替間隔(ミリ秒)
+      autoPlayDuration : 5000,
+      // キーボードの矢印キーによるスライド送りの設定(trueで有効)
+      keyboardOnAlways : true,
+      // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
+      hidePrevious : false
+  });
+});
+
+</script>

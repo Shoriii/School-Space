@@ -5,7 +5,9 @@
   </div>
   </div>
   <div class= "row">
-  <%= link_to '新規登録', new_admins_sub_facility_path, class:'btn btn-primary', style:'float:right;'%>
+  <a id="fab" href="/admins/sub_facilities/new">
+  <i class="fas fa-plus"></i>
+  </a>
       <table class="table">
           <tr class="border">
             <th>施設名</th>
@@ -21,11 +23,15 @@
           <td><%= sub_facility.sub_number %></td>
           <td><%= sub_facility.sub_name %></td>
           <td><%= sub_facility.category.category_name %></td>
-          <td><%= link_to sub_facility.facility.use_status ? "使用可" : "使用不可",admins_sub_facility_path(sub_facility.id) %></td>
+          <% if  sub_facility.use_status == true %>
+          <td><%= link_to '使用可', admins_sub_facility_path(sub_facility), class:'btn btn-success'%></td>
+          <% else  sub_facility.use_status == false %>
+          <td><%= link_to '使用不可', admins_sub_facility_path(sub_facility), class:'btn btn-danger'%></td>
           <% end %>
         </tr>
+        <% end %>
       </tbody>
         </table>
     </div>
-    <%#= paginate @facilities, class: "paginate" %>
+    <%= paginate @sub_facilities, class: "paginate" %>
 </div>
