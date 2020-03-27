@@ -1,5 +1,6 @@
 class Admins::EventsController < ApplicationController
   def index
+    @customer = current_customer
     @events = Event.all
     @events = Event.page(params[:page]).reverse_order
   end

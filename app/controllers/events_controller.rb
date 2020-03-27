@@ -5,8 +5,7 @@ class EventsController < ApplicationController
       @event = Event.new(facility_id: params[:facility_id])
   end
   def index
-    @events = Event.all
-    @events = Event.page(params[:page]).reverse_order
+    @events = current_customer.events.all.page(params[:page]).reverse_order
   end
   def show
     @event = Event.find(params[:id])

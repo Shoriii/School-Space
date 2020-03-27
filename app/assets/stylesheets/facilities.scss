@@ -16,8 +16,6 @@
 
 .facility-area img {
   height:200px;
-  width:290px;
-  
 }
 .facility-area span {
   position: absolute;
@@ -30,18 +28,13 @@
   transform: translateY(-0.1875em);
 }
 
-.clearfix >.facility-area:nth-child(3),.facility-area:nth-child(6) {
-  margin-right: 0;
-}
-
-
 .facility-heading {
   color: black;
-  border-left: solid 8px orange;/*左側の線*/
-  background: whitesmoke;/*背景色*/
-  margin-bottom: 5px;/*下のバーとの余白*/
+  border-left: solid 8px orange;
+  background: whitesmoke;
+  margin-bottom: 5px;
   line-height: 1.5;
-  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  border-radius: 0 15px 15px 0;
   padding: 0.5em;
 }
 li {
@@ -83,4 +76,28 @@ li {
   border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
   padding: 0.5em;
   transition: all 0.3s ease 0s;
+}
+//新規登録ボタン
+#fab {
+  display: block;
+  width: 45px;
+  height: 45px;
+  float:right;
+  background: #03a9f4;
+  text-align: center;
+  border-radius: 50%;
+  transition: .3s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+  margin-bottom: 5px;
+}
+
+#fab:hover {
+box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+#fab i {
+color: white;
+line-height: 30px;
+font-size: 18px;
+padding-left: 0;
 }

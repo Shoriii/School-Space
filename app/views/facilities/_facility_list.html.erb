@@ -2,13 +2,26 @@
   <% if facility.use_status == true %>
     <div class="facility-area">
         <%= link_to(facility_path(facility), class: 'list-content') do %>
-          <%= attachment_image_tag facility,:facility_image,:fill,280,200,format:'jpeg',fallback: "no_image.jpg" %><span id="favorite" class="glyphicon glyphicon-heart-empty"><%= facility.favorites.count %></span>
+          <%= attachment_image_tag facility,:facility_image,:fill,290,200,format:'jpeg',fallback: "no_image.jpg" %><span id="favorite" class="glyphicon glyphicon-heart-empty"><%= facility.favorites.count %></span>
           <p>
+          <ul class="facility-heading">評価</ul><li> <div id="star-rate-<%= facility.id %>" class="star">コメント：<%= facility.facility_comments.count%>件</div></li><br>
             <ul class="facility-heading">施設名</ul><li> <%= facility.facility_name %></li><br>
-            <ul class="facility-heading">解放日</ul><li> <%= facility.date%></li><br>
-            <ul class="facility-heading">解放時間</ul><li> <%= facility.lending_time  %></li><br>
+            <ul class="facility-heading">解放日・時間</ul><li> <%= facility.date%> /<%= facility.lending_time  %></li><br>
           </p>
         <%end%>
       </div>
   <% end %>
+  <script>
+      $('#star-rate-<%= facility.id %>').raty({
+        size: 36,
+        width: 30,
+        height:30,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+         score: '<%= facility.facility_comments.average(:rate).to_f.round(1) %>',
+      });
+      </script>
 <% end %>

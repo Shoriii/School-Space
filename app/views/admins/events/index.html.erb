@@ -11,7 +11,7 @@
 		<tbody>
 			<% @events.each do |event| %>
 			<tr>
-				<td><%= event.created_at.strftime("%Y年%m月%日 %H:%M") %></td>
+				<td><%= event.start_at.strftime("%Y年%m月%d日 %H:%M") %>〜</td>
 				<td><%= event.customer.last_name %><%= event.customer.first_name %></td>
 				<td><%= event.people %></td>
 				<td><%= event.title %></td>
