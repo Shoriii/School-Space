@@ -21,16 +21,16 @@
   opacity: 0.7;
 }
 .image1 {
-	background-image: url("image2.jpg");
+	background-image: url("/images/image2.jpg");
 }
 .image2 {
-	background-image: url("TSU89_goal_TP_V.jpg");
+	background-image: url("/images/TSU89_goal_TP_V.jpg");
 }
 .image3 {
-	background-image: url("image4.jpg");
+	background-image: url("/images/image4.jpg");
 }
 .image4 {
-	background-image: url("image3.jpg");
+	background-image: url("/images/image3.jpg");
 }
 .mv-content {
 	position: absolute;
@@ -81,7 +81,7 @@
 	height: 250px;
 	width: 300px;
 	margin:20px 10px 10px 0;
-	background-image: url(basketball.jpg);
+	background-image: url(/images/basketball.jpg);
 	background-size: cover;
 	background-position: center;
 	box-shadow: 2px 2px 4px gray;
@@ -92,7 +92,7 @@
 	height: 250px;
 	width: 300px;
 	margin:20px 10px 10px 0;
-	background-image: url(tennis.jpeg);
+	background-image: url(/images/tennis.jpeg);
 	background-size: cover;
   background-position: center;
 	box-shadow: 2px 2px 4px gray;
@@ -103,7 +103,7 @@
 	height: 250px;
 	width: 300px;
 	margin:20px 0 10px 0;
-	background-image: url(tabletennis.jpeg);
+	background-image: url(/images/tabletennis.jpeg);
 	background-size: cover;
   background-position: center;
 	box-shadow: 2px 2px 4px gray;
@@ -115,7 +115,7 @@
 	width: 300px;
 	margin-right: 10px;
 	margin-bottom: 20px;
-	background-image: url(swim.jpeg);
+	background-image: url(/images/swim.jpeg);
 	background-size: cover;
   background-position: center;
 	box-shadow: 2px 2px 4px gray;
@@ -127,7 +127,7 @@
 	width: 300px;
 	margin-right: 10px;
 	margin-bottom: 20px;
-	background-image: url(volleyball.jpeg);
+	background-image: url(/images/volleyball.jpeg);
 	background-size: cover;
   background-position: center;
 	box-shadow: 2px 2px 4px gray;
@@ -138,7 +138,7 @@
 	height: 250px;
 	width: 300px;
 	margin-bottom: 20px;
-	background-image: url(badminton.jpeg);
+	background-image: url(/images/badminton.jpeg);
 	background-size: cover;
   background-position: center;
 	box-shadow: 2px 2px 4px gray;
