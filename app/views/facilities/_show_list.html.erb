@@ -12,7 +12,7 @@
         <% end %>
         </div>
         <!--評価-->
-        <div id="star-rate-<%= facility.id %>" class="star", style="text-align:right;margin-top:10px;">コメント：<%= @facility.facility_comments.count%>件</div>
+        <div id="show-star-rate-<%= facility.id %>" class="star", style="text-align:right;margin-top:10px;">コメント：<%= @facility.facility_comments.count%>件</div>
         <!---------->
       <h3>施設紹介</h3>
         <table class= "table">
@@ -50,7 +50,7 @@
       </div>
 
       <script>
-      $('#star-rate-<%= facility.id %>').raty({
+      $('#show-star-rate-<%= facility.id %>').raty({
         size: 36,
         width: 30,
         height:30,
