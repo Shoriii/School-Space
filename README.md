@@ -31,24 +31,24 @@ URL:https://13.230.223.61/
 
 ## 使用技術
 ### 言語・FW
-ruby 2.5.7
-Rails 5.2.4.1
-Javascript / jQuery
+-ruby 2.5.7
+-Rails 5.2.4.1
+-Javascript / jQuery
 ### 開発環境
 Vagrant + VirtualBox
 ### インフラ
 AWS(EC2、RDS、ELB)、MySQL2、Nginx(WEBサーバ)
 ### その他gemなど
-fullcalendar-rails(カレンダー)
-I18n (日本語化)
-devise (認証機能)
-refile / refile_mini_magic (画像投稿)
-kaminari (ページネーション)
-ransack (検索、ソート)
-bootstrap4
-font-awesome
-Google Fonts
-paranoia（論理削除）
+-fullcalendar-rails(カレンダー)
+-I18n (日本語化)
+-devise (認証機能)
+-refile / refile_mini_magic (画像投稿)
+-kaminari (ページネーション)
+-ransack (検索、ソート)
+-bootstrap4
+-font-awesome
+-Google Fonts
+-paranoia（論理削除）
 
 ## インストール
 ```
