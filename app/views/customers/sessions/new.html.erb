@@ -18,9 +18,9 @@
         <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "パスワード（6文字以上）" %>
         <% if devise_mapping.rememberable? %>
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :remember_me,"ログイン状態を保存する",style:"font-size:15px;" %>
        <% end %>
-        <p><%= f.submit "Log in", class:"btn btn-primary", style:"width:25%;" %></p>
+        <p><%= f.submit "ログイン", class:"btn btn-primary", style:"width:25%;" %></p>
        <% end %>
        <%= render "customers/shared/links" %>
     </div>
