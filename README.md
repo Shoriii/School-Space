@@ -57,4 +57,7 @@ $ cd School-Space
 $ bundle install
 $ rails db:migrate
 $ rails db:seed
+管理者
+- メールアドレス:a@a.co.jp
+- パスワード:aaaaaa
 ```
