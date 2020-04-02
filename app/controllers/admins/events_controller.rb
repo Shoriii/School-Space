@@ -7,9 +7,6 @@ class Admins::EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
   end
-  def edit
-
-  end
   def update
     @event = Event.find(params[:id])
     @event.customer_id = current_customer.id

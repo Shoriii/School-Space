@@ -1,11 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    #@facilities = Facility.all
-    #@facility = Favorite.where(facility_id: params[:facility_id])
     @favorites = Favorite.where(customer_id: current_customer.id)
-    #@favorites = Favorite.where(facility_id: params[:facility_id])
-    #@favorites = @facility.favorites
   end
   def create
     @facility = Facility.find(params[:facility_id])
