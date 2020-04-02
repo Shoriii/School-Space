@@ -19,17 +19,17 @@ class Admins::FacilitiesController < ApplicationController
     end
   end
   def show
-      @facility = Facility.find(params[:id])
-      @events = @facility.events
-      @facility_comments = @facility.facility_comments
+    @facility = Facility.find(params[:id])
+    @events = @facility.events
+    @facility_comments = @facility.facility_comments
   end
   def edit
-      @facility = Facility.find(params[:id])
+    @facility = Facility.find(params[:id])
   end
   def update
-      @facility = Facility.find(params[:id])
+    @facility = Facility.find(params[:id])
     if @facility.update(facility_params)
-      redirect_to admins_facility_path(@facility.id), notice:'商品情報を更新しました'
+      redirect_to admins_facility_path(@facility.id)
     else
       render 'edit'
     end

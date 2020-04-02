@@ -1,14 +1,10 @@
 class Admins::EventsController < ApplicationController
   def index
     @customer = current_customer
-    @events = Event.all
     @events = Event.page(params[:page]).reverse_order
   end
   def show
     @event = Event.find(params[:id])
-  end
-  def edit
-
   end
   def update
     @event = Event.find(params[:id])
