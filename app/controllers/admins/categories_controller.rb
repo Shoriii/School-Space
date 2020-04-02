@@ -6,7 +6,6 @@ class Admins::CategoriesController < ApplicationController
  def create
   category = Category.new(category_params)
     if category.save
-      flash[:notice] = "You have creatad new category successfully."
       redirect_to admins_categories_path
     else
       @categories = Category.all
@@ -20,7 +19,6 @@ class Admins::CategoriesController < ApplicationController
  def update
   category = Category.find(params[:id])
     if category.update(category_params)
-      flash[:notice] = "You have edited category successfully."
       category = Category.find(params[:id])
       redirect_to admins_categories_path
     else
