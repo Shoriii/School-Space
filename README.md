@@ -58,7 +58,7 @@ $ bundle install
 $ rails db:migrate
 $ rails db:seed
 
-管理者
+管理者ログイン
 - メールアドレス:a@a.co.jp
 - パスワード:aaaaaa
 ```
