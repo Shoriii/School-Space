@@ -58,6 +58,19 @@
 .btn-success {
   background: #EC715F
 }
+
+.details {
+	position: absolute;
+	bottom: 120px;
+	right:200px;
+	width:150px;
+	padding:10px;
+	background-color:rgba(0,0,0,0);
+	border: 2px solid #ffffff;
+}
+.details a {
+	color:#ffffff;
+}
 //セクション
 #category,#event,#facility {
   width: 100%;
