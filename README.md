@@ -18,6 +18,7 @@
 
 ## 画面遷移
 ![Customer_UI_flow](https://user-images.githubusercontent.com/59156424/78558898-65dd3700-784e-11ea-843b-0dcacee90fa2.png)
+![Admin_UI_flow](https://user-images.githubusercontent.com/59156424/78559003-92914e80-784e-11ea-8fad-c85ae17f0935.png)
 
 ## 機能
 - 認証
