@@ -16,6 +16,9 @@
 ## ER図
 ![ER](https://user-images.githubusercontent.com/59156424/78526726-dae04a80-7815-11ea-95b3-ce5271a42014.png)
 
+## 画面遷移
+![Customer_UI_flow](https://user-images.githubusercontent.com/59156424/78558898-65dd3700-784e-11ea-843b-0dcacee90fa2.png)
+
 ## 機能
 - 認証
 - 予約
