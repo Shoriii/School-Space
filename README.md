@@ -1,8 +1,5 @@
 
 # School-Space -スクスペ-
-URL:https://13.230.223.61/
-
-## 概要
 誰でも気軽に近くの学校施設でスポーツが楽しめる「学校に特化した施設予約サイト」です。
 カレンダーを見て空いてる日や時間帯を予約できます。
 ※架空の施設を扱っています。
@@ -57,6 +54,7 @@ $ cd School-Space
 $ bundle install
 $ rails db:migrate
 $ rails db:seed
+$ rails s -b 0.0.0.0
 
 管理者ログイン
 - メールアドレス:a@a.co.jp
