@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Gem 追加分
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
