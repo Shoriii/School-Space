@@ -1,4 +1,5 @@
 class Admins::SubFacilitiesController < ApplicationController
+  before_action :authenticate_admin!
   def new
     @sub_facility = SubFacility.new
   end

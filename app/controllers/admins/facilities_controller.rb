@@ -1,4 +1,5 @@
 class Admins::FacilitiesController < ApplicationController
+  before_action :authenticate_admin!
   def top
     @facilities = Facility.all.order("created_at DESC").limit(4)
     @events= Event.where(title: "予約済").limit(4)

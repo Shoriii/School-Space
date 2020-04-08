@@ -1,4 +1,5 @@
 class Admins::EventsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @customer = current_customer
     @events = Event.page(params[:page]).reverse_order
