@@ -13,7 +13,6 @@
   transition: all 0.3s ease 0s;
   position: relative;
 }
-
 .facility-area img {
   height:200px;
   min-width: 290px;
@@ -67,9 +66,7 @@ li {
 .sidebar {
   margin-top: 20px;
 }
-
 .sidebar-title {
-  color: black;
   border-left: solid 8px orange;
   background-color: #ffffff;
   margin-bottom: 5px;
@@ -78,6 +75,7 @@ li {
   padding: 0.5em;
   transition: all 0.3s ease 0s;
 }
+
 //新規登録ボタン
 #fab {
   display: block;

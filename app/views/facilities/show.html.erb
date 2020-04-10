@@ -7,9 +7,15 @@
   <div class="row">
     <div class= "col-xs-3">
         <div class="sidebar">
-        <div class="sidebar-title"><%= link_to '基本情報', facility_path(@facility.id) %></div>
-        <div class="sidebar-title"><%= link_to 'コート一覧', sub_facility_facilities_path(@facility.id) %></div>
-        <div class="sidebar-title"><%= link_to 'カレンダー', facilities_calendar_path(@facility.id) %></div>
+        <%= link_to(facility_path(@facility), class: 'list-content') do %>
+        <div class="sidebar-title">基本情報</div>
+        <% end %>
+        <%= link_to(sub_facility_facilities_path(@facility.id), class: 'list-content') do %>
+        <div class="sidebar-title">コート一覧</div>
+        <% end %>
+        <%= link_to(facilities_calendar_path(@facility.id), class: 'list-content') do %>
+        <div class="sidebar-title">カレンダー</div>
+        <% end %>
         </div>
         <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger', style:"width:100%;"%>
     </div>

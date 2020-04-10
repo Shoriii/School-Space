@@ -19,14 +19,14 @@
               </label>
           </div>
             <div class="form-group">
-            <label><%= f.submit '追加', class:"btn btn-primary next" %></label>
+            <label><%= f.submit '追加', class:"btn btn-primary" %></label>
             </div>
           </div>
         <% end %>
         <!-- category index -->
         <table class="table category-index">
           <thead>
-            <tr>
+            <tr class="border">
               <th>カテゴリ</th>
               <th>状態</th>
               <th></th>
@@ -41,7 +41,7 @@
               <% else category.display == false %>
               <td>無効</td>
               <% end %>
-              <td><%= link_to '編集', edit_admins_category_path(category.id), class:"btn btn-succes" %></td>
+              <td><%= link_to '編集', edit_admins_category_path(category.id), class:"btn btn-success" %></td>
             </tr>
             <% end %>
           </tbody>
