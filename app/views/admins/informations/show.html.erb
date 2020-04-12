@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>お知らせ詳細</h2>
+    </div>
+  </div>
+  <div class="row">
+    <h3>投稿内容</h3>
+      <div class="information-heading">Facility</div>
+        <div class="information-title">
+          <%= @information.facility.facility_name %>
+        </div>
+      <div class="information-heading">Title</div>
+        <div class="information-title">
+          <%= @information.title %>
+        </div>
+      <div class="information-heading">Body</div>
+        <div class="information-title">
+          <%= @information.body %>
+        </div>
+      <%= link_to 'Edit', edit_admins_information_path(@information) %>
+  </div>
+</div>
