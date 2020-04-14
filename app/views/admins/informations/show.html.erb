@@ -6,18 +6,14 @@
   </div>
   <div class="row">
     <h3>投稿内容</h3>
-      <div class="information-heading">Facility</div>
-        <div class="information-title">
-          <%= @information.facility.facility_name %>
-        </div>
       <div class="information-heading">Title</div>
         <div class="information-title">
           <%= @information.title %>
         </div>
       <div class="information-heading">Body</div>
-        <div class="information-title">
+        <div class="information-body">
           <%= @information.body %>
         </div>
-      <%= link_to 'Edit', edit_admins_information_path(@information) %>
+      <%= link_to '編集', edit_admins_information_path(@information),class:"btn btn-primary edit" %>
   </div>
 </div>

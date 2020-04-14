@@ -8,12 +8,11 @@
     <div class="col-xs-3">
       <h3>お知らせ投稿</h3>
         <%= form_for(@information, url:admins_informations_path) do |f| %>
-        <%= f.label :faacility %>
-        <%= f.collection_select :facility_id, Facility.all, :id, :facility_name, include_blank: "--選択してください--" %>
+        <%= f.hidden_field :facility_id %>
         <%= f.label :title %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, size: "21x1" %>
         <%= f.label :body %>
-        <%= f.text_area :body %>
+        <%= f.text_area :body,size: "19x8" %>
         <%= f.submit class: "btn btn-primary " %>
         <% end %>
     </div>
@@ -23,7 +22,6 @@
           <thead>
             <tr class="border">
               <th>Date</th>
-              <th>Facility</th>
               <th>Title</th>
               <th></th>
               <th></th>
@@ -33,10 +31,9 @@
             <% @informations.each do |information| %>
               <tr>
                 <td><%= information.created_at.strftime("%Y年%m月%d日")%></td>
-                <td><%= information.facility.facility_name %></td>
                 <td><%= information.title %></td>
-                <td><%= link_to 'Show', admins_information_path(information), class: "btn btn-primary" %></td>
-                <td><%= link_to 'Destroy', admins_information_path(information), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%></td>
+                <td><%= link_to '表示', admins_information_path(information), class: "btn btn-primary" %></td>
+                <td><%= link_to '削除', admins_information_path(information), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%></td>
               </tr>
             <% end %>
           </tbody>

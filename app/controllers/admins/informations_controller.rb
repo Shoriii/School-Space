@@ -1,12 +1,13 @@
 class Admins::InformationsController < ApplicationController
   def index
-    @informations = Information.all
-    @information = Information.new
+    @information = Information.new(facility_id: params[:facility_id])
+    @informations = Information.where(facility_id: params[:facility_id]).all
   end
   def create
     @information = Information.new(information_params)
+    @facility = Information.where(facility_id: params[:facility_id])
     if @information.save
-      redirect_to admins_informations_path
+      redirect_back(fallback_location: root_path)
     else
       render 'index'
     end
@@ -21,8 +22,9 @@ class Admins::InformationsController < ApplicationController
   end
 
   def update
+    @information = Information.find(params[:id])
     if @information.update(information_params)
-      redirect_to admins_information_path(@information.id)
+      redirect_to admins_information_facilities_path(@information.facility.id)
     else
       render 'edit'
     end
@@ -30,7 +32,7 @@ class Admins::InformationsController < ApplicationController
   def destroy
     @information = Information.find(params[:id])
     if @information.destroy
-       redirect_to admins_informations_path
+      redirect_back(fallback_location: root_path)
     else
     	 render action: :destroy
     end

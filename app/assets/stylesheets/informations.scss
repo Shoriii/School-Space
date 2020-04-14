@@ -1,3 +1,34 @@
 // Place all the styles related to the informations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//編集画面
+.information-heading {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.information-title {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+  font-size: 15px;
+  width: 600px;
+  border: 1px solid gray;
+  background-color: #ffffff;
+}
+.information-body {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+  font-size: 15px;
+  width: 600px;
+  border: 1px solid gray;
+  background-color: #ffffff;
+}
+.edit {
+  margin-left: 20px;
+}
+//編集画面
+.information-edit {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+}

@@ -10,11 +10,14 @@
         <%= link_to(admins_facility_path(@facility.id), class: 'list-content') do %>
          <div class="sidebar-title">基本情報</div>
         <% end %>
-        <%= link_to(admins_facility_path(@facility.id), class: 'list-content') do %>
+        <%= link_to( admins_sub_facility_facilities_path(@facility.id), class: 'list-content') do %>
         <div class="sidebar-title">コート一覧</div>
         <% end %>
          <%= link_to(admins_facilities_calendar_path(@facility.id), class: 'list-content') do %>
         <div class="sidebar-title">カレンダー</div>
+        <% end %>
+        <%= link_to(admins_information_facilities_path(@facility.id), class: 'list-content') do %>
+        <div class="sidebar-title">お知らせ</div>
         <% end %>
         </div>
         <%= link_to '編集する', edit_admins_facility_path, class: 'btn btn-primary', style:"width:100%;"%>
