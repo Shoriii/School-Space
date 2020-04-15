@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   def index
-    @information = Information.all
+    @informations = Information.where(facility_id: params[:facility_id]).all
   end
 
   def show
