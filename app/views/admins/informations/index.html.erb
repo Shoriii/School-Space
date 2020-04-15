@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>お知らせ</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <h3>お知らせ投稿</h3>
+        <%= form_for(@information, url:admins_informations_path) do |f| %>
+        <%= f.hidden_field :facility_id %>
+        <%= f.label :title %>
+        <%= f.text_field :title, size: "21x1" %>
+        <%= f.label :body %>
+        <%= f.text_area :body,size: "19x8" %>
+        <%= f.submit class: "btn btn-primary " %>
+        <% end %>
+    </div>
+    <div class="col-xs-9">
+      <h3>投稿一覧</h3>
+        <table class="table">
+          <thead>
+            <tr class="border">
+              <th>Date</th>
+              <th>Title</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @informations.each do |information| %>
+              <tr>
+                <td><%= information.created_at.strftime("%Y年%m月%d日")%></td>
+                <td><%= information.title %></td>
+                <td><%= link_to '表示', admins_information_path(information), class: "btn btn-primary" %></td>
+                <td><%= link_to '削除', admins_information_path(information), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+ </div>
+</div>

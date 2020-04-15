@@ -1,0 +1,98 @@
+// Place all the styles related to the informations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//管理者_詳細画面
+.information-heading {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.information-title {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+  font-size: 15px;
+  width: 600px;
+  border: 1px solid gray;
+  background-color: #ffffff;
+}
+.information-body {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+  font-size: 15px;
+  width: 600px;
+  border: 1px solid gray;
+  background-color: #ffffff;
+}
+.edit {
+  margin-left: 20px;
+}
+//管理者_編集画面
+.information-edit {
+  margin: 10px 0 10px 20px;
+  padding: 5px 5px;
+}
+
+//会員_一覧画面
+.information-box {
+  width:100%;
+  background-color:#ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.information-box ul {
+  margin-bottom: 0;
+  border-bottom: 1px solid #E3E3E3;
+}
+
+.information-box ul:hover {
+  transform: translateY(-0.1875em);
+}
+
+.information-date {
+  display: inline-block;
+  padding: 10px 0 10px 20px;
+}
+//newボタン
+.new-label {
+  padding: 0.3em 1em;
+  text-decoration: none;
+  background-color: #F07D7D;
+  color:#ffffff;
+  border: solid 2px #F07D7D;
+  border-radius: 10px;
+  transition: .4s;
+}
+
+.new-label:hover {
+  background: #ffffff;
+  color: #F07D7D;
+}
+//会員_詳細画面
+.information-detail {
+  width:100%;
+  height:400px;
+  background-color:#ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.information-main {
+  font-size: 25px;
+  padding: 10px 0 10px 20px;
+}
+
+.information-datetime {
+  text-align: right;
+  padding: 0 30px 10px 0;
+  margin-bottom: 20px;
+}
+
+.information-content {
+  font-size: 15px;
+  padding: 10px 0 10px 20px;
+}
+
+.show {
+  margin-top: 10px;
+  width:70px;
+}

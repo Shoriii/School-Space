@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :show, :edit, :update, :destroy]
     get 'facilities/:facility_id/sub_facilities' ,to: 'sub_facilities#index', as: 'sub_facility_facilities'
     resources :sub_facilities, except: [:destroy]
+    get 'facilities/:facility_id/informations' ,to: 'informations#index', as: 'information_facilities'
+    resources :informations
   end
 
   ##会員側
@@ -53,7 +55,8 @@ Rails.application.routes.draw do
   end
   get 'facilities/:facility_id/sub_facilities' ,to: 'sub_facilities#index', as: 'sub_facility_facilities'
   resources :sub_facilities, only: [:index,:show]
-
+  get 'facilities/:facility_id/informations' ,to: 'informations#index', as: 'information_facilities'
+  resources :informations, only: [:index,:show]
   get 'homes/about' => 'homes#about'
 
 end

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>お知らせ編集</h2>
+    </div>
+  </div>
+  <div class="row">
+   <%= form_for(@information, url:admins_information_path(@information)) do |f| %>
+    <h3>投稿内容</h3>
+      <div class="information-heading">Title</div>
+        <div class="information-edit">
+          <%= f.text_field :title,size:"60x1"%>
+        </div>
+      <div class="information-heading">Body</div>
+        <div class="information-edit">
+          <%= f.text_area :body, size:"60x10" %>
+        </div>
+        <%= f.submit "更新", class: "btn btn-primary edit" %>
+    <% end %>
+  </div>
+</div>

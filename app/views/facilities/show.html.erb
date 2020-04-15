@@ -16,6 +16,9 @@
         <%= link_to(facilities_calendar_path(@facility.id), class: 'list-content') do %>
         <div class="sidebar-title">カレンダー</div>
         <% end %>
+        <%= link_to(information_facilities_path(@facility.id), class: 'list-content') do %>
+        <div class="sidebar-title">お知らせ</div>
+        <% end %>
         </div>
         <%= link_to '新規予約する', new_event_path(@facility.id), class: 'btn btn-danger', style:"width:100%;"%>
     </div>

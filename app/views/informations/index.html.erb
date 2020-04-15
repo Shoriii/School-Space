@@ -1,0 +1,42 @@
+<div class ="container">
+  <div class= "row">
+    <div class= "col-xs-12">
+      <h2>詳細画面</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class= "col-xs-3">
+        <div class="sidebar">
+        <%= link_to("./", class: 'list-content') do %>
+        <div class="sidebar-title">基本情報</div>
+      <% end %>
+      <%= link_to(sub_facility_facilities_path, class: 'list-content') do %>
+        <div class="sidebar-title">コート一覧</div>
+        <% end %>
+      <%= link_to(facilities_calendar_path, class: 'list-content') do %>
+        <div class="sidebar-title">カレンダー</div>
+      <% end %>
+        </div>
+        <%= link_to(information_facilities_path, class: 'list-content') do %>
+        <div class="sidebar-title">お知らせ</div>
+        <% end %>
+        <%= link_to '新規予約する', new_event_path, class: 'btn btn-danger', style:"width:100%;"%>
+        </div>
+    <div class= "col-xs-9">
+      <h3>お知らせ一覧</h3>
+        <% @informations.each do |information| %>
+        <%= link_to(information_path(information), class: 'list-content') do %>
+        <div class="information-box">
+          <ul>
+            <li class="information-date"><%= information.created_at.strftime("%Y年%m月%d日")%></li>
+            <li class="information-date"><%= information.title %></li>
+            <% if information.new_arrival? == true %>
+            <li class="information-date"><%= render 'new_label' %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
